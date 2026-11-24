@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "outcomes": {},
+  "id": "toc_john_fleet",
+  "name": "John's Getaway",
+  "fleet": {
+    "faction": "independent",
+    "type": "smuggler",
+    "size": "template",
+    "template": "toc_john",
+    "quality": 0.7
+  },
+  "spawn": {
+    "at": "agreus",
+    "when": "quest-stage",
+    "despawnOnStageEnd": true
+  },
+  "behavior": "guard",
+  "flags": {
+    "hostile": true,
+    "important": true,
+    "allowDisengage": true
+  },
+  "notes": "S8, for Act 5 (S14): spawn it with an Encounter node; it appears at that stage's map marker. Fast ships (a Hyperion and Kites) for the final chase."
+}

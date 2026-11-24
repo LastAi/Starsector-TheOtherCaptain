@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "outcomes": {},
+  "onDefeated": [
+    {
+      "op": "set",
+      "key": "$global.toc_fought_hegemony",
+      "value": "true"
+    }
+  ],
+  "id": "toc_warrant_patrol",
+  "name": "Warrant Patrol",
+  "fleet": {
+    "faction": "hegemony",
+    "type": "patrolMedium",
+    "size": "template",
+    "template": "toc_officer_hard_ass",
+    "quality": 0.6
+  },
+  "spawn": {
+    "at": "arcadia_station",
+    "when": "quest-stage"
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": true,
+    "important": true,
+    "allowDisengage": true
+  },
+  "notes": "Crisis bar (Hegemony warrant) stage \"Police patrols\": Lieutenant Brandt's patrol comes for the player from Arcadia Station."
+}

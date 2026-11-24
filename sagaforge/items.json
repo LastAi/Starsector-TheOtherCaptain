@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "items": [
+    {
+      "kind": "special",
+      "id": "toc_evidence",
+      "name": "Evidence",
+      "icon": "graphics/icons/cargo/toc_tablet_item.png",
+      "basePrice": 0,
+      "stackSize": 20,
+      "cargoSpace": 0,
+      "tags": [
+        "mission_item",
+        "hide_in_codex"
+      ],
+      "description": "Records, receipts, and forged papers that show someone else has been using your name. The Hegemony tax collector will take them as proof of your innocence, one piece at a time.",
+      "otherColumns": {
+        "tech/manufacturer": "",
+        "baseRaidDanger": "",
+        "sound id": "ui_cargo_special_tech_pickup",
+        "sound id drop": "ui_cargo_special_tech_drop"
+      },
+      "preset": "quest_item",
+      "special": {
+        "rarity": 0,
+        "plugin": "com.fs.starfarer.api.campaign.impl.items.GenericSpecialItemPlugin",
+        "pluginParams": ""
+      }
+    }
+  ]
+}

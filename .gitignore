@@ -1,0 +1,4 @@
+# Saga Forge's backups inside a mod
+sagaforge/backups/
+
+*.log

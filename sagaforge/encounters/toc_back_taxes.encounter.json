@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "id": "toc_back_taxes",
+  "name": "Back Taxes",
+  "fleet": {
+    "faction": "hegemony",
+    "type": "patrolMedium",
+    "size": "template",
+    "points": 80,
+    "quality": 0.5,
+    "template": "toc_tax_collector"
+  },
+  "spawn": {
+    "at": "arcadia_station",
+    "when": "quest-stage",
+    "despawnOnStageEnd": true
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": false,
+    "important": false,
+    "allowDisengage": false
+  },
+  "outcomes": {},
+  "hail": {
+    "describe": true,
+    "text": "You're being hailed by the Hegemony fleet, their ships move in to positions to block you from leaving."
+  },
+  "commDialog": "toc_back_taxes_comm"
+}

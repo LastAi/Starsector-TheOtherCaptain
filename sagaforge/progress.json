@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "progress": [
+    {
+      "id": "toc_progress",
+      "name": "Hegemony Warrant",
+      "max": 1000,
+      "startConditions": [
+        "$global.toc_warrant_on"
+      ],
+      "stages": [
+        {
+          "id": "patrol",
+          "progress": 300,
+          "title": "Police patrols",
+          "text": "The Hegemony has issued a warrant in your name. Its police patrols are looking for you.",
+          "actions": [
+            {
+              "op": "spawn",
+              "encounter": "toc_warrant_patrol"
+            }
+          ]
+        },
+        {
+          "id": "hunters",
+          "progress": 600,
+          "title": "Bounty hunters",
+          "text": "The bounty on your name is high enough for mercenaries to come looking.",
+          "actions": [
+            {
+              "op": "spawn",
+              "encounter": "toc_bounty_hunters"
+            }
+          ]
+        },
+        {
+          "id": "hunted",
+          "progress": 1000,
+          "title": "Hunted",
+          "text": "The Hegemony has sent a task force after you. It will not stop until your name is cleared.",
+          "actions": [
+            {
+              "op": "spawn",
+              "encounter": "toc_hegemony_hunt"
+            }
+          ]
+        }
+      ],
+      "factors": [
+        {
+          "id": "open",
+          "desc": "The warrant is open",
+          "points": 50,
+          "conditions": [
+            "!$global.toc_name_cleared"
+          ]
+        },
+        {
+          "id": "fought",
+          "desc": "You fought the Hegemony",
+          "points": 40,
+          "conditions": [
+            "$global.toc_fought_hegemony",
+            "!$global.toc_name_cleared"
+          ]
+        },
+        {
+          "id": "john",
+          "desc": "John Starsector is still out there, using your name",
+          "points": 30,
+          "conditions": [
+            "$global.toc_john_free",
+            "!$global.toc_name_cleared"
+          ]
+        }
+      ],
+      "negative": true,
+      "tag": "Story",
+      "restartAt": 700,
+      "notes": "How the quest drives it (S10–S16):\n- It starts when $global.toc_warrant_on is true (Act 2, S11), or at the first \"Progress\" action (an Action node › Progress points).\n- Act 1 (S10) sets where it starts: Progress points per way out, e.g. pay 0, bluff 100, flee 200, fight 300 (fight also sets $global.toc_fought_hegemony = true).\n- Monthly: +50 while open; +40 after fighting the Hegemony ($global.toc_fought_hegemony); +30 while John is free ($global.toc_john_free). All stop when $global.toc_name_cleared is true.\n- One-time: chasing John at the gala +250; saving the Wheel -200; each Evidence handed to the tax collector -100 (S16).\n- Stages: 300 police patrols (Warrant Patrol), 600 bounty hunters, 1000 hunted (Hegemony Manhunt); then back to 700, so the manhunt returns while the warrant stays open."
+    }
+  ]
+}

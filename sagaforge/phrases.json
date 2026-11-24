@@ -1,0 +1,110 @@
+{
+  "format": 1,
+  "phrases": [
+    {
+      "token": "$toc_he",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "she"
+        }
+      ],
+      "otherwise": "he",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_He",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "She"
+        }
+      ],
+      "otherwise": "He",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_him",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "her"
+        }
+      ],
+      "otherwise": "him",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_his",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "her"
+        }
+      ],
+      "otherwise": "his",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_His",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "Her"
+        }
+      ],
+      "otherwise": "His",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_himself",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "herself"
+        }
+      ],
+      "otherwise": "himself",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_man",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "woman"
+        }
+      ],
+      "otherwise": "man",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    }
+  ]
+}

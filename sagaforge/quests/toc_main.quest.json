@@ -1,0 +1,2284 @@
+{
+  "format": 1,
+  "id": "toc_main",
+  "title": "The Other Captain",
+  "kind": "quest",
+  "icon": "graphics/icons/missions/security_codes.png",
+  "start": {
+    "kind": "trigger",
+    "trigger": "OpenInteractionDialog",
+    "conditions": [
+      "$market.factionId == hegemony score:1000"
+    ]
+  },
+  "requires": [],
+  "stages": [
+    {
+      "id": "summons",
+      "title": "Report to Arcadia Station",
+      "journal": "Hegemony customs flagged your identity: a revenue officer at Arcadia Station wants a word about \"outstanding obligations\".",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Report to the revenue office at Arcadia Station",
+      "marker": "arcadia_station"
+    },
+    {
+      "id": "stopped",
+      "title": "Back taxes",
+      "journal": "The revenue officer is out with his fleet. He will find you.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Deal with the tax collector"
+    },
+    {
+      "id": "trail",
+      "title": "The paper trail",
+      "journal": "Someone has been running up debts in your name. The Hegemony records office at Arcadia Station keeps the paper trail.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Visit the records office at Arcadia Station",
+      "marker": "arcadia_station"
+    },
+    {
+      "id": "wheel",
+      "title": "The Foundling Wheel",
+      "journal": "Your \"donations\" go to the Foundling Wheel, an orphanage station at Nomios. Its charity gala is hosted by its generous patron: you. Allegedly.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Visit the Foundling Wheel",
+      "marker": "toc_foundling_wheel"
+    },
+    {
+      "id": "gala_wait",
+      "title": "Before the gala",
+      "journal": "The Foundling Wheel's charity gala is in a week. $toc_starsector_name, wearing your name, will be there.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Wait for the gala"
+    },
+    {
+      "id": "gala",
+      "title": "The gala",
+      "journal": "The Foundling Wheel's charity gala is tonight. So is $toc_starsector_name.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Attend the gala at the Foundling Wheel",
+      "marker": "toc_foundling_wheel"
+    },
+    {
+      "id": "aftermath",
+      "title": "After the gala",
+      "journal": "$toc_starsector_firstName got away, and the Foundling Wheel's reactor was failing behind you.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Wait for news"
+    },
+    {
+      "id": "search",
+      "title": "The search",
+      "journal": "$toc_starsector_firstName got away. The Hegemony is looking; so are you.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Wait for a lead on $toc_starsector_firstName"
+    },
+    {
+      "id": "hunt",
+      "title": "The reckoning",
+      "journal": "$toc_starsector_name is hiding at Agreus, in Arcadia.",
+      "kind": "normal",
+      "renamedFrom": [],
+      "nextStep": "Find $toc_starsector_firstName at Agreus",
+      "marker": "agreus"
+    }
+  ],
+  "variables": [],
+  "rewards": [
+    {
+      "id": "done",
+      "xp": 15000,
+      "storyPoints": 1
+    }
+  ],
+  "repeatable": false,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "start",
+      "x": 12,
+      "y": 275
+    },
+    {
+      "id": "notice",
+      "type": "dialog",
+      "x": 290,
+      "y": 263,
+      "title": "Customs",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_fees"
+      },
+      "displays": [],
+      "text": "The docking clamps engage, then disengage, then engage again, as if the station can't decide whether to let you in.\n\nA customs officer appears on your comm, reading from a screen. \"$playerName? Your identity is flagged for outstanding obligations to the Hegemony Revenue Service. Fees, fines, a tax or two.\" He squints. \"Several taxes. Please report to the revenue office at Arcadia Station at your earliest convenience.\"\n\n\"Or at our convenience,\" he adds. \"Which comes sooner.\"",
+      "highlights": [
+        "Arcadia Station"
+      ],
+      "options": [
+        {
+          "id": "n_ok",
+          "text": "Say there must be a mistake"
+        },
+        {
+          "id": "n_go",
+          "text": "Promise to report to Arcadia Station"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "n_mistake",
+      "type": "dialog",
+      "x": 567,
+      "y": 231,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "\"Everybody says that.\" He doesn't look up. \"Arcadia Station. Revenue office. Have a pleasant day, $playerSirOrMadam.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "n_go2",
+          "text": "Sigh, and plot a course to Arcadia"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_summons",
+      "type": "stage",
+      "x": 845,
+      "y": 279,
+      "stage": "summons"
+    },
+    {
+      "id": "office",
+      "type": "wait",
+      "x": 1122,
+      "y": 279,
+      "mode": "arrive",
+      "entity": "arcadia_station",
+      "arriveText": "Arcadia Station's revenue office keeps a light on for you. Literally: your name is blinking on the board above the counter.",
+      "optionText": "Report to the revenue office"
+    },
+    {
+      "id": "office_say",
+      "type": "dialog",
+      "x": 1400,
+      "y": 279,
+      "title": "Revenue office",
+      "visual": {
+        "kind": "person",
+        "person": "toc_varro"
+      },
+      "displays": [],
+      "text": "The clerk checks the board, then you, then the board again. \"Revenue Officer $toc_varro_name handles your file personally. He's out with his fleet.\" She taps a key. \"I've let him know you're here. He'll meet you when you undock.\"\n\n\"Most people try to leave,\" she adds kindly. \"It never helps.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "o_ok",
+          "text": "Undock and get it over with"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_stopped",
+      "type": "stage",
+      "x": 1678,
+      "y": 279,
+      "stage": "stopped"
+    },
+    {
+      "id": "stop",
+      "type": "encounter",
+      "x": 1955,
+      "y": 255,
+      "encounter": "toc_back_taxes"
+    },
+    {
+      "id": "stop_wait",
+      "type": "wait",
+      "x": 2233,
+      "y": 129,
+      "mode": "days",
+      "days": 7
+    },
+    {
+      "id": "stop_giveup",
+      "type": "action",
+      "x": 2510,
+      "y": 129,
+      "title": "The fleet gives up",
+      "ops": [
+        {
+          "op": "despawn",
+          "encounter": "toc_back_taxes"
+        }
+      ]
+    },
+    {
+      "id": "giveup_close",
+      "type": "link",
+      "x": 2788,
+      "y": 141,
+      "mode": "close",
+      "target": ""
+    },
+    {
+      "id": "a1_won",
+      "type": "action",
+      "x": 2233,
+      "y": 279,
+      "title": "Fought the Hegemony",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_a1_way",
+          "value": "fight"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_fought_hegemony",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "a1_after",
+      "type": "dialog",
+      "x": 2510,
+      "y": 327,
+      "title": "Back taxes",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_fees"
+      },
+      "displays": [],
+      "text": "$toc_main_a1_after_v1\n\nYou spend the next hour going through the documents Varro sent. The signatures are yours. The handwriting isn't. The ship registrations are yours, except for the ships, which you have never owned. Someone has been living your life, and doing it badly.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "a1_ok",
+          "text": "Find out who is using your name"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_a1_after_v1",
+          "owner": "node:toc_main/a1_after",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_a1_way == pay"
+              ],
+              "text": "Ten thousand credits lighter, you watch the Hegemony fleet form up and leave. Varro waves. You don't."
+            },
+            {
+              "when": [
+                "$global.toc_a1_way == bluff"
+              ],
+              "text": "Varro's fleet leaves with a polite apology and an even more polite reminder that the debt is still on file."
+            },
+            {
+              "when": [
+                "$global.toc_a1_way == fight"
+              ],
+              "text": "The Hegemony fleet limps away, and somewhere a revenue officer is filing a report with the word \"assault\" in it, several times."
+            }
+          ],
+          "otherwise": "You never let the tax collector catch you. By now, a report with your name on it is on its way to every Hegemony office in the sector."
+        }
+      ]
+    },
+    {
+      "id": "a2_start",
+      "type": "action",
+      "x": 2788,
+      "y": 327,
+      "title": "The warrant",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_warrant_on",
+          "value": "true"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_john_free",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "a2_bar",
+      "type": "branch",
+      "x": 3066,
+      "y": 291,
+      "title": "Where the bar starts",
+      "cases": [
+        {
+          "id": "pay",
+          "label": "paid (0)",
+          "conditions": [
+            "$global.toc_a1_way == pay"
+          ]
+        },
+        {
+          "id": "bluff",
+          "label": "bluffed (100)",
+          "conditions": [
+            "$global.toc_a1_way == bluff"
+          ]
+        },
+        {
+          "id": "fight",
+          "label": "fought (300)",
+          "conditions": [
+            "$global.toc_a1_way == fight"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar_bluff",
+      "type": "action",
+      "x": 3343,
+      "y": 195,
+      "title": "Warrant: 100",
+      "ops": [
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": 100,
+          "text": "You talked your way out of the debt"
+        }
+      ]
+    },
+    {
+      "id": "bar_flee",
+      "type": "action",
+      "x": 3343,
+      "y": 495,
+      "title": "Warrant: 200",
+      "ops": [
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": 200,
+          "text": "You ran from the tax collector"
+        }
+      ]
+    },
+    {
+      "id": "bar_fight",
+      "type": "action",
+      "x": 3343,
+      "y": 345,
+      "title": "Warrant: 300",
+      "ops": [
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": 300,
+          "text": "You fought the tax collector"
+        }
+      ]
+    },
+    {
+      "id": "go_trail",
+      "type": "stage",
+      "x": 3621,
+      "y": 461,
+      "stage": "trail"
+    },
+    {
+      "id": "records",
+      "type": "wait",
+      "x": 3898,
+      "y": 461,
+      "mode": "arrive",
+      "entity": "arcadia_station",
+      "arriveText": "The records office at Arcadia Station is three floors of filing cabinets and one very tired archivist.",
+      "optionText": "Visit the Hegemony records office"
+    },
+    {
+      "id": "records_say",
+      "type": "dialog",
+      "x": 4176,
+      "y": 449,
+      "title": "Records office",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_fees"
+      },
+      "displays": [],
+      "text": "The archivist pulls your file. It is thick. It is much thicker than your life.\n\nCredit lines, ship leases, a gambling debt on Chicomoztoc, and a standing monthly donation to the Foundling Wheel Charity Fund, an orphanage station at Nomios. Every withdrawal from that fund is signed by its generous patron: \"Capt. $playerName\".\n\nPinned to the back of the file, a flyer: the Foundling Wheel's charity gala, hosted by the same generous patron. There is a picture. It is not you.",
+      "highlights": [
+        "Foundling Wheel",
+        "charity gala"
+      ],
+      "options": [
+        {
+          "id": "r_who",
+          "text": "Ask who that is in the picture",
+          "showOnce": "conversation"
+        },
+        {
+          "id": "r_copy",
+          "text": "Take copies of everything"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "records_who",
+      "type": "dialog",
+      "x": 4454,
+      "y": 417,
+      "title": "",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_john_wan",
+        "female": {
+          "category": "illustrations",
+          "key": "toc_jane_wan"
+        }
+      },
+      "displays": [],
+      "text": "The archivist runs the face. The match comes back in under a second, which, she says, is a record. \"$toc_starsector_name. Identity theft, tax evasion, three counts of accidental arson, one of deliberate arson, and...\" she scrolls, \"...stealing from orphans. Wanted in four systems. $toc_He owes more than you do, and you owe a lot.\"\n\n\"Well. $toc_He owes it as you.\"",
+      "highlights": [
+        "$toc_starsector_name"
+      ],
+      "options": [
+        {
+          "id": "r_copy2",
+          "text": "Take copies of everything"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "got_records",
+      "type": "action",
+      "x": 4731,
+      "y": 465,
+      "title": "The records",
+      "ops": [
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "go_wheel",
+      "type": "stage",
+      "x": 5009,
+      "y": 465,
+      "stage": "wheel"
+    },
+    {
+      "id": "wheel_arr",
+      "type": "wait",
+      "x": 5286,
+      "y": 465,
+      "mode": "arrive",
+      "entity": "toc_foundling_wheel",
+      "arriveText": "The Foundling Wheel turns slowly over Nomios, patched in six colours. A banner across the docking ring reads WELCOME TO OUR PATRON, with your name spelled correctly. Small mercies.",
+      "optionText": "Visit the orphanage"
+    },
+    {
+      "id": "meet",
+      "type": "dialog",
+      "x": 5564,
+      "y": 441,
+      "title": "The Foundling Wheel",
+      "visual": {
+        "kind": "person",
+        "person": "toc_orr",
+        "second": "toc_phan"
+      },
+      "displays": [],
+      "text": "Two children are waiting at the airlock with a hand-painted sign. The taller one, $toc_orr_name, holds it upside down. The smaller one, $toc_phan_name, corrects it, then looks you up and down.\n\n\"You're shorter than on the poster,\" says $toc_phan_name.\n\"And you came early,\" says $toc_orr_name. \"The gala's not for a week. Are you checking on the fund? Matron says you check on the fund a lot.\"",
+      "highlights": [
+        "a week"
+      ],
+      "options": [
+        {
+          "id": "m_play",
+          "text": "Play along, and ask them to show you around"
+        },
+        {
+          "id": "m_truth",
+          "text": "Tell them you are not who they think you are"
+        },
+        {
+          "id": "m_adult",
+          "text": "Ask them to fetch an adult"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "m_kind",
+      "type": "action",
+      "x": 5842,
+      "y": 315,
+      "title": "Kind",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_trust",
+          "value": "kind"
+        }
+      ]
+    },
+    {
+      "id": "m_honest",
+      "type": "action",
+      "x": 5842,
+      "y": 465,
+      "title": "Honest",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_trust",
+          "value": "honest"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_know",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "m_rude",
+      "type": "action",
+      "x": 5842,
+      "y": 615,
+      "title": "Rude",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_trust",
+          "value": "rude"
+        }
+      ]
+    },
+    {
+      "id": "tour",
+      "type": "dialog",
+      "x": 6397,
+      "y": 315,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "They show you everything: the hydroponics bay, the classroom, the reactor room they are absolutely not allowed in. $toc_orr_name explains how the coolant pumps work, in detail, twice. By the end of it they are holding your hands.\n\n\"See you at the gala, Captain,\" says $toc_phan_name. \"Bring the real cake this time.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "t_ok",
+          "text": "Promise to come to the gala"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "honest_say",
+      "type": "dialog",
+      "x": 6119,
+      "y": 465,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "They listen to the whole story. $toc_orr_name looks crushed. $toc_phan_name looks thoughtful, then disappears and comes back with a crumpled receipt.\n\n\"The patron dropped this last time. I kept it because the signature looked wrong. You do your Ps differently.\" She hands it over. \"If that's not you, who is it?\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "h_ok",
+          "text": "Take the receipt, and promise to find out at the gala"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "honest_got",
+      "type": "action",
+      "x": 6397,
+      "y": 465,
+      "title": "The receipt",
+      "ops": [
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "rude_say",
+      "type": "dialog",
+      "x": 6119,
+      "y": 615,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "$toc_orr_name and $toc_phan_name exchange a look, the look children give adults who have just failed a test. They fetch the matron, who is polite, busy and no help at all.\n\nOn your way out you hear $toc_phan_name: \"Told you the poster was nicer.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "ru_ok",
+          "text": "Leave, and come back for the gala"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_gala_wait",
+      "type": "stage",
+      "x": 6674,
+      "y": 587,
+      "stage": "gala_wait"
+    },
+    {
+      "id": "gala_days",
+      "type": "wait",
+      "x": 6952,
+      "y": 587,
+      "mode": "days",
+      "days": 7
+    },
+    {
+      "id": "gala_say0",
+      "type": "dialog",
+      "x": 7230,
+      "y": 587,
+      "title": "The gala",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "An invitation pings your comm, addressed to you, signed by you: the Foundling Wheel's charity gala starts tonight.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "g0_ok",
+          "text": "Plot a course to Nomios"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_gala",
+      "type": "stage",
+      "x": 7507,
+      "y": 587,
+      "stage": "gala"
+    },
+    {
+      "id": "gala_arr",
+      "type": "wait",
+      "x": 7785,
+      "y": 587,
+      "mode": "arrive",
+      "entity": "toc_foundling_wheel",
+      "arriveText": "The Foundling Wheel is lit up like a festival. Shuttles from three systems crowd the docking ring.",
+      "optionText": "Attend the charity gala"
+    },
+    {
+      "id": "gala_bar",
+      "type": "dialog",
+      "x": 8064,
+      "y": 573,
+      "title": "The gala bar",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "gim_gala_bar"
+      },
+      "displays": [],
+      "text": "The gala starts at the bar, the way the best ones do. Somebody has hung bunting from the coolant pipes. Every few minutes a guest raises a glass \"to Captain $playerName, the most generous captain in the sector!\" and the bar cheers. Nobody looks at you. Nobody knows your face. They know your name very well.\n\n$toc_main_gala_bar_v1",
+      "highlights": [],
+      "options": [
+        {
+          "id": "gb_guest",
+          "text": "Chat with the guest who keeps toasting you",
+          "showOnce": "conversation"
+        },
+        {
+          "id": "gb_hall",
+          "text": "Go into the hall for the patron's speech"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_gala_bar_v1",
+          "owner": "node:toc_main/gala_bar",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_orphans_trust == kind"
+              ],
+              "text": "$toc_orr_name and $toc_phan_name are working the bar as volunteer waiters, in bow ties three sizes too big. $toc_phan_name slides you a drink. \"On the house,\" she whispers. \"You paid for it. Allegedly.\""
+            },
+            {
+              "when": [
+                "$global.toc_orphans_trust == honest"
+              ],
+              "text": "$toc_phan_name squeezes past with a tray of glasses and hisses, \"Is the fake here?\" $toc_orr_name, behind her, is glaring at every jacket in the room."
+            },
+            {
+              "when": [
+                "$global.toc_orphans_trust == rude"
+              ],
+              "text": "$toc_orr_name and $toc_phan_name are serving drinks. They serve everybody near you, and somehow never you."
+            }
+          ],
+          "otherwise": "$toc_orr_name and $toc_phan_name are serving drinks in bow ties three sizes too big."
+        }
+      ],
+      "repeat": {
+        "text": "The bar is still toasting your name. Through the doors, the hall is filling up for the speech.",
+        "scope": "visit"
+      }
+    },
+    {
+      "id": "gala_guest",
+      "type": "dialog",
+      "x": 8340,
+      "y": 602,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "The guest is a cheerful freight broker who has given the Foundling Wheel a great deal of money. \"Such a hands-on patron,\" she beams. \"Do you know, the Captain inspected the reactor room personally this afternoon? Alone, for an hour. Very thorough. Such dedication.\"\n\nYou find that you have put your drink down.",
+      "highlights": [
+        "inspected the reactor room personally"
+      ],
+      "options": [
+        {
+          "id": "gg_ok",
+          "text": "Excuse yourself"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "gala",
+      "type": "dialog",
+      "x": 8340,
+      "y": 428,
+      "title": "The charity gala",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "gim_gala"
+      },
+      "displays": [],
+      "text": "The hall is under the Wheel's old observation dome, packed to the walls. On a stage made of shipping crates, a $toc_man in a very good jacket is giving a speech. \"...and that is why I, Captain $playerName, have always believed in giving back.\" $toc_He has your name, and none of your manners. $toc_He is, you have to admit, a good speaker.\n\n$toc_main_gala_v1\n\nThen $toc_he presses something in $toc_his pocket. The lights die. Security doors slam open all over the station, and a klaxon starts: REACTOR COOLANT FAILURE. In the red light you see $toc_starsector_name running for the hangar with the fund's credit chip in $toc_his teeth.",
+      "highlights": [
+        "REACTOR COOLANT FAILURE"
+      ],
+      "options": [
+        {
+          "id": "g_save",
+          "text": "Save the Wheel - get to the reactor room"
+        },
+        {
+          "id": "g_chase",
+          "text": "Chase $toc_starsector_firstName down - your name is not leaving with $toc_him"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_gala_v1",
+          "owner": "node:toc_main/gala",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_orphans_know"
+              ],
+              "text": "$toc_phan_name, at the front, is glaring at $toc_him with her arms crossed. $toc_orr_name is taking notes."
+            },
+            {
+              "when": [
+                "$global.toc_orphans_trust == rude"
+              ],
+              "text": "Near the stage, $toc_orr_name and $toc_phan_name are clapping for $toc_him. They don't look at you."
+            }
+          ],
+          "otherwise": "$toc_orr_name and $toc_phan_name wave at you from the front row, then at $toc_him, confused."
+        }
+      ]
+    },
+    {
+      "id": "save",
+      "type": "dialog",
+      "x": 8618,
+      "y": 313,
+      "title": "The reactor room",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_tablet"
+      },
+      "displays": [],
+      "text": "$toc_main_save_v1\n\nThe klaxon stops. The lights come back. Somewhere far away, a shuttle you will never catch jumps out of the system.\n\nOn the reactor room floor, where $toc_starsector_firstName must have planted $toc_his device, lies the Wheel's real fund ledger. Every credit $toc_he took, in $toc_his own handwriting.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "s_ok",
+          "text": "Take the ledger"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_save_v1",
+          "owner": "node:toc_main/save",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_orphans_trust != rude"
+              ],
+              "text": "$toc_orr_name gets there before you, shouting the coolant pump routine he explained to you twice. You were listening. Between the three of you, the pumps come back one by one."
+            }
+          ],
+          "otherwise": "You find the reactor room on your third try. $toc_orr_name is already there, shouting the coolant routine at no one in particular. He doesn't like you, but he lets you hold the wrench."
+        }
+      ]
+    },
+    {
+      "id": "saved",
+      "type": "action",
+      "x": 8895,
+      "y": 313,
+      "title": "The Wheel saved",
+      "ops": [
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": -200,
+          "text": "You saved the Foundling Wheel"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_wheel_saved",
+          "value": "true"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_with",
+          "value": "player"
+        },
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": 1
+        },
+        {
+          "op": "rep",
+          "faction": "independent",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "id": "saved_say",
+      "type": "dialog",
+      "x": 9173,
+      "y": 313,
+      "title": "",
+      "visual": {
+        "kind": "person",
+        "person": "toc_orr",
+        "second": "toc_phan"
+      },
+      "displays": [],
+      "text": "In the morning, $toc_orr_name and $toc_phan_name are waiting at your airlock with their bags packed. \"Matron says we can go with you,\" says $toc_phan_name, \"if you promise to bring us back for school.\" $toc_orr_name is already asking your engineer about your coolant pumps.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "sv_ok",
+          "text": "Welcome them aboard"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "chase",
+      "type": "dialog",
+      "x": 8618,
+      "y": 463,
+      "title": "The hangar",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_tablet"
+      },
+      "displays": [],
+      "text": "You reach the hangar as $toc_starsector_firstName's shuttle clears the doors. $toc_He salutes you through the canopy. With your hand, somehow.\n\nIn the bay where it stood: a dropped datapad, still logged in. Fuel receipts, a docking reservation at Agreus, and a note: \"Remember: be YOU.\"\n\nBehind you, the Wheel shudders.",
+      "highlights": [
+        "Agreus"
+      ],
+      "options": [
+        {
+          "id": "c_ok",
+          "text": "Grab the datapad and run for your ship"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "chased",
+      "type": "action",
+      "x": 8895,
+      "y": 463,
+      "title": "The chase",
+      "ops": [
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": 250,
+          "text": "You chased $toc_starsector_firstName while the Foundling Wheel burned"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_with",
+          "value": "john"
+        },
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "go_aftermath",
+      "type": "stage",
+      "x": 9173,
+      "y": 463,
+      "stage": "aftermath"
+    },
+    {
+      "id": "lost_days",
+      "type": "wait",
+      "x": 9450,
+      "y": 463,
+      "mode": "days",
+      "days": 1
+    },
+    {
+      "id": "wheel_lost",
+      "type": "action",
+      "x": 9728,
+      "y": 463,
+      "title": "The Wheel is lost",
+      "ops": [
+        {
+          "op": "removeEntity",
+          "entity": "toc_foundling_wheel",
+          "decivilize": true
+        }
+      ]
+    },
+    {
+      "id": "lost_say",
+      "type": "dialog",
+      "x": 10006,
+      "y": 463,
+      "title": "News from Nomios",
+      "visual": {
+        "kind": "planet",
+        "entity": "nomios"
+      },
+      "displays": [],
+      "text": "The news reaches you a day later. The Foundling Wheel's reactor went critical an hour after you left. Everyone was evacuated; nobody was hurt, which, given $toc_starsector_firstName, counts as a miracle.\n\nThe last shuttle out carried $toc_orr_name and $toc_phan_name, and their famous patron, Captain $playerName, who had come back for them. $toc_starsector_firstName came back for them. They went with $toc_him.",
+      "highlights": [
+        "They went with"
+      ],
+      "options": [
+        {
+          "id": "l_ok",
+          "text": "Follow the datapad to Agreus"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_search",
+      "type": "stage",
+      "x": 9450,
+      "y": 313,
+      "stage": "search"
+    },
+    {
+      "id": "search_days",
+      "type": "wait",
+      "x": 9728,
+      "y": 313,
+      "mode": "days",
+      "days": 20
+    },
+    {
+      "id": "search_found",
+      "type": "dialog",
+      "x": 10006,
+      "y": 313,
+      "title": "A lead",
+      "visual": {
+        "kind": "person",
+        "person": "toc_varro"
+      },
+      "displays": [],
+      "text": "A message from Arcadia Station, from $toc_varro_name: \"Someone using your name, has rented a berth at Agreus. Please don't make me file anything else.\" There is a smiley at the end. It looks like it was added under protest.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "sf_ok",
+          "text": "Head for Agreus"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "go_hunt",
+      "type": "stage",
+      "x": 10283,
+      "y": 444,
+      "stage": "hunt"
+    },
+    {
+      "id": "agreus_arr",
+      "type": "wait",
+      "x": 10561,
+      "y": 444,
+      "mode": "arrive",
+      "entity": "agreus",
+      "arriveText": "Agreus's docks smell of fuel and bad decisions. Somewhere down here is somebody with your name.",
+      "optionText": "Find $toc_starsector_name"
+    },
+    {
+      "id": "confront",
+      "type": "dialog",
+      "x": 10838,
+      "y": 326,
+      "title": "$toc_starsector_name",
+      "visual": {
+        "kind": "person",
+        "person": "toc_starsector"
+      },
+      "displays": [],
+      "text": "$toc_He is in the back of a dockside bar, under a poster of $toc_himself. Of you. $toc_He waves you over like an old friend.\n\n\"Captain! Sit, sit. I've been you for three years; it's nice to finally meet me.\" $toc_main_confront_v1\n\n\"Let's be adults about this. I took a name nobody was using properly. You can't prove much. And you don't want a scene.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "c_truth",
+          "text": "Tell Orr and Phan who really destroyed the Wheel",
+          "showIf": [
+            "$global.toc_orphans_with == john",
+            "!$global.toc_told_truth"
+          ],
+          "showOnce": "conversation"
+        },
+        {
+          "id": "c_hand",
+          "text": "Hand $toc_him over to the Hegemony, with the evidence",
+          "showIf": [
+            "PlayerHasCargo toc_evidence 1"
+          ],
+          "tooltip": "Uses one piece of evidence. Clears your name."
+        },
+        {
+          "id": "c_deal",
+          "text": "Hear $toc_his deal"
+        },
+        {
+          "id": "c_let",
+          "text": "Let $toc_him go"
+        },
+        {
+          "id": "c_kids",
+          "text": "Let Orr and Phan decide",
+          "showIf": [
+            "$global.toc_orphans_with == player"
+          ]
+        },
+        {
+          "id": "c_force",
+          "text": "Grab $toc_him - $toc_his fleet can try to stop you"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_confront_v1",
+          "owner": "node:toc_main/confront",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_orphans_with == player"
+              ],
+              "text": "$toc_He glances at $toc_orr_name and $toc_phan_name behind you. \"And you brought the kids. Low blow, Captain.\""
+            },
+            {
+              "when": [
+                "$global.toc_orphans_with == john"
+              ],
+              "text": "$toc_orr_name and $toc_phan_name sit at $toc_his table, eating $toc_his chips. They look at you like you're the one who blew up their home."
+            }
+          ],
+          "otherwise": ""
+        }
+      ],
+      "speaker": "toc_starsector"
+    },
+    {
+      "id": "truth",
+      "type": "action",
+      "x": 11116,
+      "y": 80,
+      "title": "The truth",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_told_truth",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": "truth_br",
+      "type": "branch",
+      "x": 10006,
+      "y": 132,
+      "title": "Do they believe you?",
+      "cases": [
+        {
+          "id": "yes",
+          "label": "they trust you",
+          "conditions": [
+            "$global.toc_orphans_trust != rude"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "truth_yes",
+      "type": "dialog",
+      "x": 10283,
+      "y": 144,
+      "title": "",
+      "visual": {
+        "kind": "person",
+        "person": "toc_orr",
+        "second": "toc_phan"
+      },
+      "displays": [],
+      "text": "You tell them about the device, the coolant, the credit chip in $toc_his teeth. $toc_orr_name looks at $toc_starsector_firstName. $toc_starsector_firstName looks at the ceiling. $toc_phan_name puts down the chips, slowly, and comes to stand next to you.\n\n\"$toc_He said the reactor was an accident,\" says $toc_orr_name. \"$toc_He says everything is an accident.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "ty_ok",
+          "text": "Turn back to $toc_starsector_firstName"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "kids_side",
+      "type": "action",
+      "x": 10561,
+      "y": 144,
+      "title": "The kids side with you",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_orphans_with",
+          "value": "player"
+        }
+      ]
+    },
+    {
+      "id": "truth_no",
+      "type": "dialog",
+      "x": 10561,
+      "y": 294,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "You tell them everything. They listen politely, the way you once listened to them, and then $toc_phan_name says, \"The poster was nicer,\" and goes back to her chips.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "tn_ok",
+          "text": "Turn back to $toc_starsector_firstName"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "deal",
+      "type": "dialog",
+      "x": 11116,
+      "y": 380,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "\"One hundred thousand credits,\" $toc_starsector_firstName says, \"and I retire your name. Never use it again. I'll be someone else entirely. I was thinking: Admiral.\" $toc_He slides a credit chip across the table. It is the Wheel's.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "d_take",
+          "text": "Take the deal"
+        },
+        {
+          "id": "d_back",
+          "text": "Push the chip back"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "kids",
+      "type": "dialog",
+      "x": 11116,
+      "y": 230,
+      "title": "",
+      "visual": {
+        "kind": "person",
+        "person": "toc_orr",
+        "second": "toc_phan"
+      },
+      "displays": [],
+      "text": "$toc_orr_name and $toc_phan_name confer in whispers. It takes a while. $toc_starsector_firstName tries to join in and is shushed.\n\n\"$toc_He goes to the Hegemony,\" $toc_phan_name announces at last. \"But $toc_he has to write to us. Every week. Real letters.\"\n\"With the right handwriting,\" adds $toc_orr_name.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "k_ok",
+          "text": "Call the Hegemony"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "force_say",
+      "type": "dialog",
+      "x": 11116,
+      "y": 680,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "$toc_starsector_firstName is out of $toc_his chair before you are, and out of the bar before your crew is. Twenty minutes later $toc_his little fleet is burning hard for the jump point. Your sensors officer asks, quietly, whether \"$toc_starsector_firstName's Getaway\" is a real fleet name.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "f_go",
+          "text": "Run $toc_him down"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "john_fleet",
+      "type": "encounter",
+      "x": 11394,
+      "y": 656,
+      "encounter": "toc_john_fleet"
+    },
+    {
+      "id": "menu8",
+      "type": "link",
+      "x": 11671,
+      "y": 692,
+      "mode": "menu",
+      "target": ""
+    },
+    {
+      "id": "end_handover",
+      "type": "action",
+      "x": 11394,
+      "y": 12,
+      "title": "Ending: handover",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_ending",
+          "value": "handover"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_name_cleared",
+          "value": "true"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_john_free",
+          "value": "false"
+        },
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": -1000,
+          "text": "Your name was cleared"
+        },
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": -1
+        }
+      ]
+    },
+    {
+      "id": "end_force",
+      "type": "action",
+      "x": 11671,
+      "y": 818,
+      "title": "Ending: force",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_ending",
+          "value": "force"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_name_cleared",
+          "value": "true"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_john_free",
+          "value": "false"
+        },
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": -1000,
+          "text": "Your name was cleared"
+        }
+      ]
+    },
+    {
+      "id": "end_deal",
+      "type": "action",
+      "x": 11671,
+      "y": 392,
+      "title": "Ending: deal",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_ending",
+          "value": "deal"
+        },
+        {
+          "op": "credits",
+          "amount": 100000
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_john_free",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": "end_letgo",
+      "type": "action",
+      "x": 11671,
+      "y": 542,
+      "title": "Ending: letgo",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_ending",
+          "value": "letgo"
+        }
+      ]
+    },
+    {
+      "id": "end_orphans",
+      "type": "action",
+      "x": 11394,
+      "y": 230,
+      "title": "Ending: orphans",
+      "ops": [
+        {
+          "op": "set",
+          "key": "$global.toc_ending",
+          "value": "orphans"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_name_cleared",
+          "value": "true"
+        },
+        {
+          "op": "set",
+          "key": "$global.toc_john_free",
+          "value": "false"
+        },
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": -1000,
+          "text": "Your name was cleared"
+        }
+      ]
+    },
+    {
+      "id": "done",
+      "type": "end",
+      "x": 11949,
+      "y": 780,
+      "outcome": "success",
+      "reward": "done"
+    },
+    {
+      "id": "poster_br",
+      "type": "branch",
+      "x": 12226,
+      "y": 768,
+      "title": "Which poster",
+      "cases": [
+        {
+          "id": "caught",
+          "label": "name cleared",
+          "conditions": [
+            "$global.toc_name_cleared"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poster_caught",
+      "type": "dialog",
+      "x": 12504,
+      "y": 653,
+      "title": "The bounty board",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_john_term",
+        "female": {
+          "category": "illustrations",
+          "key": "toc_jane_term"
+        }
+      },
+      "displays": [],
+      "text": "Back on Arcadia Station, the bounty board updates itself with a cheerful chime.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "pc_ok",
+          "text": "Read on"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "poster_free",
+      "type": "dialog",
+      "x": 12504,
+      "y": 803,
+      "title": "The bounty board",
+      "visual": {
+        "kind": "illustration",
+        "category": "illustrations",
+        "key": "toc_john_wan",
+        "female": {
+          "category": "illustrations",
+          "key": "toc_jane_wan"
+        }
+      },
+      "displays": [],
+      "text": "Back on Arcadia Station, the bounty board still shows that face. Under your name.",
+      "highlights": [],
+      "options": [
+        {
+          "id": "pf_ok",
+          "text": "Read on"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "epilogue",
+      "type": "dialog",
+      "x": 12782,
+      "y": 784,
+      "title": "What became of everyone",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "$toc_main_epilogue_v1\n\n$toc_main_epilogue_v2\n\n$toc_main_epilogue_v3\n\n$toc_main_epilogue_v4",
+      "highlights": [],
+      "options": [
+        {
+          "id": "e_ok",
+          "text": "Close the file"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [
+        {
+          "token": "$toc_main_epilogue_v1",
+          "owner": "node:toc_main/epilogue",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_wheel_saved"
+              ],
+              "text": "The Foundling Wheel still turns over Nomios. Its new coolant pumps carry a small brass plaque with your name on it. Your real name, this time."
+            }
+          ],
+          "otherwise": "Where the Foundling Wheel used to turn, the Nomios traffic charts now show a hazard marker and a slowly spreading debris field. The orphans were rehoused on Nomios. The matron sends a card every year."
+        },
+        {
+          "token": "$toc_main_epilogue_v2",
+          "owner": "node:toc_main/epilogue",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_orphans_with == player"
+              ],
+              "text": "$toc_orr_name and $toc_phan_name travel with your fleet now. $toc_orr_name has rewired the coffee machine twice; $toc_phan_name keeps the books, and the books have never been so honest."
+            },
+            {
+              "when": [
+                "$global.toc_ending == handover"
+              ],
+              "text": "With $toc_starsector_firstName in a cell, $toc_orr_name and $toc_phan_name went back to Nomios. They write to $toc_him every week. They write to you too, less often, with spelling mistakes on purpose."
+            },
+            {
+              "when": [
+                "$global.toc_ending == force"
+              ],
+              "text": "With $toc_starsector_firstName in a cell, $toc_orr_name and $toc_phan_name went back to Nomios. They write to $toc_him every week. They write to you too, less often, with spelling mistakes on purpose."
+            }
+          ],
+          "otherwise": "$toc_orr_name and $toc_phan_name left with $toc_starsector_firstName. Postcards arrive from places that don't have post offices."
+        },
+        {
+          "token": "$toc_main_epilogue_v3",
+          "owner": "node:toc_main/epilogue",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_ending == handover"
+              ],
+              "text": "$toc_starsector_name is serving eleven years in a Hegemony penal colony, where $toc_he has already been elected to the prisoners' council under somebody else's name."
+            },
+            {
+              "when": [
+                "$global.toc_ending == force"
+              ],
+              "text": "$toc_starsector_name was pulled from the wreck of $toc_his flagship, alive and complaining. $toc_He is serving eleven years in a Hegemony penal colony and has opened a gift shop."
+            },
+            {
+              "when": [
+                "$global.toc_ending == orphans"
+              ],
+              "text": "$toc_starsector_name writes to the Foundling kids every week from a Hegemony cell. Real letters. The handwriting is $toc_his own."
+            },
+            {
+              "when": [
+                "$global.toc_ending == deal"
+              ],
+              "text": "$toc_starsector_firstName kept $toc_his word, more or less. $toc_He never uses your name again. $toc_He uses your first officer's."
+            }
+          ],
+          "otherwise": "$toc_starsector_name is still out there. Every few months a bill arrives for something you never bought, and a thank-you card for buying it."
+        },
+        {
+          "token": "$toc_main_epilogue_v4",
+          "owner": "node:toc_main/epilogue",
+          "mode": "first-match",
+          "cases": [
+            {
+              "when": [
+                "$global.toc_name_cleared"
+              ],
+              "text": "Your name is clean. The warrant is closed, and $toc_varro_name sent a fruit basket. It came with an invoice."
+            }
+          ],
+          "otherwise": "The warrant is still open. $toc_varro_name at Arcadia Station will take more evidence, one piece at a time, until your name is clean."
+        }
+      ]
+    },
+    {
+      "id": "menu9",
+      "type": "link",
+      "x": 13059,
+      "y": 796,
+      "mode": "menu",
+      "target": ""
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start_next",
+      "from": "start",
+      "handle": "next",
+      "to": "notice"
+    },
+    {
+      "id": "e_notice_n_ok",
+      "from": "notice",
+      "handle": "n_ok",
+      "to": "n_mistake"
+    },
+    {
+      "id": "e_notice_n_go",
+      "from": "notice",
+      "handle": "n_go",
+      "to": "go_summons"
+    },
+    {
+      "id": "e_n_mistake_n_go2",
+      "from": "n_mistake",
+      "handle": "n_go2",
+      "to": "go_summons"
+    },
+    {
+      "id": "e_go_summons_next",
+      "from": "go_summons",
+      "handle": "next",
+      "to": "office"
+    },
+    {
+      "id": "e_office_next",
+      "from": "office",
+      "handle": "next",
+      "to": "office_say"
+    },
+    {
+      "id": "e_office_say_o_ok",
+      "from": "office_say",
+      "handle": "o_ok",
+      "to": "go_stopped"
+    },
+    {
+      "id": "e_go_stopped_next",
+      "from": "go_stopped",
+      "handle": "next",
+      "to": "stop"
+    },
+    {
+      "id": "e_stop_next",
+      "from": "stop",
+      "handle": "next",
+      "to": "stop_wait"
+    },
+    {
+      "id": "e_stop_defeated",
+      "from": "stop",
+      "handle": "defeated",
+      "to": "a1_won"
+    },
+    {
+      "id": "e_stop_avoided",
+      "from": "stop",
+      "handle": "avoided",
+      "to": "a1_after"
+    },
+    {
+      "id": "e_stop_wait_next",
+      "from": "stop_wait",
+      "handle": "next",
+      "to": "stop_giveup"
+    },
+    {
+      "id": "e_stop_giveup_next",
+      "from": "stop_giveup",
+      "handle": "next",
+      "to": "giveup_close"
+    },
+    {
+      "id": "e_a1_won_next",
+      "from": "a1_won",
+      "handle": "next",
+      "to": "a1_after"
+    },
+    {
+      "id": "e_a1_after_a1_ok",
+      "from": "a1_after",
+      "handle": "a1_ok",
+      "to": "a2_start"
+    },
+    {
+      "id": "e_a2_start_next",
+      "from": "a2_start",
+      "handle": "next",
+      "to": "a2_bar"
+    },
+    {
+      "id": "e_a2_bar_pay",
+      "from": "a2_bar",
+      "handle": "pay",
+      "to": "go_trail"
+    },
+    {
+      "id": "e_a2_bar_bluff",
+      "from": "a2_bar",
+      "handle": "bluff",
+      "to": "bar_bluff"
+    },
+    {
+      "id": "e_a2_bar_fight",
+      "from": "a2_bar",
+      "handle": "fight",
+      "to": "bar_fight"
+    },
+    {
+      "id": "e_a2_bar_else",
+      "from": "a2_bar",
+      "handle": "else",
+      "to": "bar_flee"
+    },
+    {
+      "id": "e_bar_bluff_next",
+      "from": "bar_bluff",
+      "handle": "next",
+      "to": "go_trail"
+    },
+    {
+      "id": "e_bar_flee_next",
+      "from": "bar_flee",
+      "handle": "next",
+      "to": "go_trail"
+    },
+    {
+      "id": "e_bar_fight_next",
+      "from": "bar_fight",
+      "handle": "next",
+      "to": "go_trail"
+    },
+    {
+      "id": "e_go_trail_next",
+      "from": "go_trail",
+      "handle": "next",
+      "to": "records"
+    },
+    {
+      "id": "e_records_next",
+      "from": "records",
+      "handle": "next",
+      "to": "records_say"
+    },
+    {
+      "id": "e_records_say_r_who",
+      "from": "records_say",
+      "handle": "r_who",
+      "to": "records_who"
+    },
+    {
+      "id": "e_records_say_r_copy",
+      "from": "records_say",
+      "handle": "r_copy",
+      "to": "got_records"
+    },
+    {
+      "id": "e_records_who_r_copy2",
+      "from": "records_who",
+      "handle": "r_copy2",
+      "to": "got_records"
+    },
+    {
+      "id": "e_got_records_next",
+      "from": "got_records",
+      "handle": "next",
+      "to": "go_wheel"
+    },
+    {
+      "id": "e_go_wheel_next",
+      "from": "go_wheel",
+      "handle": "next",
+      "to": "wheel_arr"
+    },
+    {
+      "id": "e_wheel_arr_next",
+      "from": "wheel_arr",
+      "handle": "next",
+      "to": "meet"
+    },
+    {
+      "id": "e_meet_m_play",
+      "from": "meet",
+      "handle": "m_play",
+      "to": "m_kind"
+    },
+    {
+      "id": "e_meet_m_truth",
+      "from": "meet",
+      "handle": "m_truth",
+      "to": "m_honest"
+    },
+    {
+      "id": "e_meet_m_adult",
+      "from": "meet",
+      "handle": "m_adult",
+      "to": "m_rude"
+    },
+    {
+      "id": "e_m_kind_next",
+      "from": "m_kind",
+      "handle": "next",
+      "to": "tour"
+    },
+    {
+      "id": "e_m_honest_next",
+      "from": "m_honest",
+      "handle": "next",
+      "to": "honest_say"
+    },
+    {
+      "id": "e_m_rude_next",
+      "from": "m_rude",
+      "handle": "next",
+      "to": "rude_say"
+    },
+    {
+      "id": "e_tour_t_ok",
+      "from": "tour",
+      "handle": "t_ok",
+      "to": "go_gala_wait"
+    },
+    {
+      "id": "e_honest_say_h_ok",
+      "from": "honest_say",
+      "handle": "h_ok",
+      "to": "honest_got"
+    },
+    {
+      "id": "e_honest_got_next",
+      "from": "honest_got",
+      "handle": "next",
+      "to": "go_gala_wait"
+    },
+    {
+      "id": "e_rude_say_ru_ok",
+      "from": "rude_say",
+      "handle": "ru_ok",
+      "to": "go_gala_wait"
+    },
+    {
+      "id": "e_go_gala_wait_next",
+      "from": "go_gala_wait",
+      "handle": "next",
+      "to": "gala_days"
+    },
+    {
+      "id": "e_gala_days_next",
+      "from": "gala_days",
+      "handle": "next",
+      "to": "gala_say0"
+    },
+    {
+      "id": "e_gala_say0_g0_ok",
+      "from": "gala_say0",
+      "handle": "g0_ok",
+      "to": "go_gala"
+    },
+    {
+      "id": "e_go_gala_next",
+      "from": "go_gala",
+      "handle": "next",
+      "to": "gala_arr"
+    },
+    {
+      "id": "e_gala_arr_next",
+      "from": "gala_arr",
+      "handle": "next",
+      "to": "gala_bar"
+    },
+    {
+      "id": "e_gala_bar_gb_guest",
+      "from": "gala_bar",
+      "handle": "gb_guest",
+      "to": "gala_guest"
+    },
+    {
+      "id": "e_gala_bar_gb_hall",
+      "from": "gala_bar",
+      "handle": "gb_hall",
+      "to": "gala"
+    },
+    {
+      "id": "e_gala_guest_gg_ok",
+      "from": "gala_guest",
+      "handle": "gg_ok",
+      "to": "gala_bar"
+    },
+    {
+      "id": "e_gala_g_save",
+      "from": "gala",
+      "handle": "g_save",
+      "to": "save"
+    },
+    {
+      "id": "e_gala_g_chase",
+      "from": "gala",
+      "handle": "g_chase",
+      "to": "chase"
+    },
+    {
+      "id": "e_save_s_ok",
+      "from": "save",
+      "handle": "s_ok",
+      "to": "saved"
+    },
+    {
+      "id": "e_saved_next",
+      "from": "saved",
+      "handle": "next",
+      "to": "saved_say"
+    },
+    {
+      "id": "e_saved_say_sv_ok",
+      "from": "saved_say",
+      "handle": "sv_ok",
+      "to": "go_search"
+    },
+    {
+      "id": "e_chase_c_ok",
+      "from": "chase",
+      "handle": "c_ok",
+      "to": "chased"
+    },
+    {
+      "id": "e_chased_next",
+      "from": "chased",
+      "handle": "next",
+      "to": "go_aftermath"
+    },
+    {
+      "id": "e_go_aftermath_next",
+      "from": "go_aftermath",
+      "handle": "next",
+      "to": "lost_days"
+    },
+    {
+      "id": "e_lost_days_next",
+      "from": "lost_days",
+      "handle": "next",
+      "to": "wheel_lost"
+    },
+    {
+      "id": "e_wheel_lost_next",
+      "from": "wheel_lost",
+      "handle": "next",
+      "to": "lost_say"
+    },
+    {
+      "id": "e_lost_say_l_ok",
+      "from": "lost_say",
+      "handle": "l_ok",
+      "to": "go_hunt"
+    },
+    {
+      "id": "e_go_search_next",
+      "from": "go_search",
+      "handle": "next",
+      "to": "search_days"
+    },
+    {
+      "id": "e_search_days_next",
+      "from": "search_days",
+      "handle": "next",
+      "to": "search_found"
+    },
+    {
+      "id": "e_search_found_sf_ok",
+      "from": "search_found",
+      "handle": "sf_ok",
+      "to": "go_hunt"
+    },
+    {
+      "id": "e_go_hunt_next",
+      "from": "go_hunt",
+      "handle": "next",
+      "to": "agreus_arr"
+    },
+    {
+      "id": "e_agreus_arr_next",
+      "from": "agreus_arr",
+      "handle": "next",
+      "to": "confront"
+    },
+    {
+      "id": "e_confront_c_truth",
+      "from": "confront",
+      "handle": "c_truth",
+      "to": "truth"
+    },
+    {
+      "id": "e_confront_c_hand",
+      "from": "confront",
+      "handle": "c_hand",
+      "to": "end_handover"
+    },
+    {
+      "id": "e_confront_c_deal",
+      "from": "confront",
+      "handle": "c_deal",
+      "to": "deal"
+    },
+    {
+      "id": "e_confront_c_let",
+      "from": "confront",
+      "handle": "c_let",
+      "to": "end_letgo"
+    },
+    {
+      "id": "e_confront_c_kids",
+      "from": "confront",
+      "handle": "c_kids",
+      "to": "kids"
+    },
+    {
+      "id": "e_confront_c_force",
+      "from": "confront",
+      "handle": "c_force",
+      "to": "force_say"
+    },
+    {
+      "id": "e_truth_next",
+      "from": "truth",
+      "handle": "next",
+      "to": "truth_br"
+    },
+    {
+      "id": "e_truth_br_yes",
+      "from": "truth_br",
+      "handle": "yes",
+      "to": "truth_yes"
+    },
+    {
+      "id": "e_truth_br_else",
+      "from": "truth_br",
+      "handle": "else",
+      "to": "truth_no"
+    },
+    {
+      "id": "e_truth_yes_ty_ok",
+      "from": "truth_yes",
+      "handle": "ty_ok",
+      "to": "kids_side"
+    },
+    {
+      "id": "e_kids_side_next",
+      "from": "kids_side",
+      "handle": "next",
+      "to": "confront"
+    },
+    {
+      "id": "e_truth_no_tn_ok",
+      "from": "truth_no",
+      "handle": "tn_ok",
+      "to": "confront"
+    },
+    {
+      "id": "e_deal_d_take",
+      "from": "deal",
+      "handle": "d_take",
+      "to": "end_deal"
+    },
+    {
+      "id": "e_deal_d_back",
+      "from": "deal",
+      "handle": "d_back",
+      "to": "confront"
+    },
+    {
+      "id": "e_kids_k_ok",
+      "from": "kids",
+      "handle": "k_ok",
+      "to": "end_orphans"
+    },
+    {
+      "id": "e_force_say_f_go",
+      "from": "force_say",
+      "handle": "f_go",
+      "to": "john_fleet"
+    },
+    {
+      "id": "e_john_fleet_next",
+      "from": "john_fleet",
+      "handle": "next",
+      "to": "menu8"
+    },
+    {
+      "id": "e_john_fleet_defeated",
+      "from": "john_fleet",
+      "handle": "defeated",
+      "to": "end_force"
+    },
+    {
+      "id": "e_john_fleet_avoided",
+      "from": "john_fleet",
+      "handle": "avoided",
+      "to": "end_letgo"
+    },
+    {
+      "id": "e_end_handover_next",
+      "from": "end_handover",
+      "handle": "next",
+      "to": "done"
+    },
+    {
+      "id": "e_end_force_next",
+      "from": "end_force",
+      "handle": "next",
+      "to": "done"
+    },
+    {
+      "id": "e_end_deal_next",
+      "from": "end_deal",
+      "handle": "next",
+      "to": "done"
+    },
+    {
+      "id": "e_end_letgo_next",
+      "from": "end_letgo",
+      "handle": "next",
+      "to": "done"
+    },
+    {
+      "id": "e_end_orphans_next",
+      "from": "end_orphans",
+      "handle": "next",
+      "to": "done"
+    },
+    {
+      "id": "e_done_next",
+      "from": "done",
+      "handle": "next",
+      "to": "poster_br"
+    },
+    {
+      "id": "e_poster_br_caught",
+      "from": "poster_br",
+      "handle": "caught",
+      "to": "poster_caught"
+    },
+    {
+      "id": "e_poster_br_else",
+      "from": "poster_br",
+      "handle": "else",
+      "to": "poster_free"
+    },
+    {
+      "id": "e_poster_caught_pc_ok",
+      "from": "poster_caught",
+      "handle": "pc_ok",
+      "to": "epilogue"
+    },
+    {
+      "id": "e_poster_free_pf_ok",
+      "from": "poster_free",
+      "handle": "pf_ok",
+      "to": "epilogue"
+    },
+    {
+      "id": "e_epilogue_e_ok",
+      "from": "epilogue",
+      "handle": "e_ok",
+      "to": "menu9"
+    }
+  ],
+  "notes": "Filled in for the user (S10–S16, 2026-11-24). Flags: $global.toc_a1_way (pay, bluff, flee, fight), toc_orphans_trust (kind, honest, rude), toc_orphans_with (player, john), toc_ending (handover, force, deal, letgo, orphans), toc_wheel_saved, toc_name_cleared, toc_john_free."
+}

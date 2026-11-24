@@ -1,0 +1,110 @@
+{
+  "format": 1,
+  "templates": [
+    {
+      "id": "toc_tax_collector",
+      "name": "Tax Collector",
+      "faction": "hegemony",
+      "fleetType": "investigators",
+      "ships": [
+        {
+          "variant": "centurion_Assault"
+        },
+        {
+          "variant": "centurion_Assault"
+        },
+        {
+          "variant": "hound_hegemony_Standard"
+        },
+        {
+          "variant": "enforcer_XIV_Elite"
+        },
+        {
+          "variant": "enforcer_XIV_Elite"
+        }
+      ],
+      "flagship": 2,
+      "captain": "toc_varro"
+    },
+    {
+      "id": "toc_officer_hard_ass",
+      "name": "Warrant Enforcer",
+      "faction": "hegemony",
+      "fleetType": "patrolMedium",
+      "ships": [
+        {
+          "variant": "lasher_Standard"
+        },
+        {
+          "variant": "lasher_Standard"
+        },
+        {
+          "variant": "lasher_Standard"
+        },
+        {
+          "variant": "enforcer_Balanced"
+        },
+        {
+          "variant": "enforcer_XIV_Elite"
+        },
+        {
+          "variant": "enforcer_CS"
+        },
+        {
+          "variant": "dominator_Support"
+        }
+      ],
+      "flagship": 4,
+      "captain": "toc_brandt",
+      "captainDiesOnDefeat": true
+    },
+    {
+      "id": "toc_bounty_hunters",
+      "name": "Bounty Hunters",
+      "faction": "mercenary",
+      "fleetType": "patrolMedium",
+      "ships": [
+        {
+          "variant": "lasher_Standard"
+        },
+        {
+          "variant": "lasher_Standard"
+        },
+        {
+          "variant": "tempest_Attack"
+        },
+        {
+          "variant": "brawler_Elite"
+        },
+        {
+          "variant": "lasher_Assault"
+        }
+      ],
+      "flagship": 3
+    },
+    {
+      "id": "toc_john",
+      "name": "John's Getaway",
+      "faction": "independent",
+      "fleetType": "smuggler",
+      "ships": [
+        {
+          "variant": "hyperion_Strike",
+          "name": "Paperwork Pending"
+        },
+        {
+          "variant": "medusa_Attack"
+        },
+        {
+          "variant": "kite_original_Stock"
+        },
+        {
+          "variant": "kite_original_Stock"
+        }
+      ],
+      "flagship": 0,
+      "captain": "toc_starsector"
+    }
+  ],
+  "typeNames": {}
+}

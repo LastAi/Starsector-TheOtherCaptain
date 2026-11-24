@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "id": "arcadia",
+  "name": "Arcadia",
+  "kind": "existing",
+  "entities": [
+    {
+      "id": "toc_foundling_wheel",
+      "kind": "station",
+      "type": "makeshift_station",
+      "name": "Foundling Wheel",
+      "orbit": {
+        "focus": "nomios",
+        "radius": 320,
+        "angle": 270,
+        "days": 167
+      },
+      "market": {
+        "id": "toc_foundling_wheel",
+        "name": "Foundling Wheel",
+        "faction": "independent",
+        "size": 1,
+        "conditions": [
+          "population_1"
+        ],
+        "industries": [
+          "population",
+          "spaceport"
+        ],
+        "submarkets": [
+          "open_market"
+        ],
+        "freePort": true,
+        "people": [],
+        "protectFromInvasion": true
+      }
+    }
+  ],
+  "addToExistingSaves": true
+}

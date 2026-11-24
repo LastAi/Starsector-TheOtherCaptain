@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "id": "toc_evidence_turnin",
+  "title": "Evidence for the tax office",
+  "kind": "dialog",
+  "icon": "",
+  "start": {
+    "kind": "option",
+    "trigger": "PopulateOptions",
+    "conditions": [
+      "$market.id == arcadia_station",
+      "$global.toc_warrant_on",
+      "!$global.toc_name_cleared",
+      "PlayerHasCargo toc_evidence 1"
+    ],
+    "optionText": "Take your evidence to the revenue office"
+  },
+  "requires": [],
+  "stages": [],
+  "variables": [],
+  "rewards": [],
+  "repeatable": false,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "start",
+      "x": 12,
+      "y": 198
+    },
+    {
+      "id": "desk",
+      "type": "dialog",
+      "x": 290,
+      "y": 186,
+      "title": "Revenue office",
+      "visual": {
+        "kind": "person",
+        "person": "toc_varro"
+      },
+      "displays": [],
+      "text": "$toc_varro_name looks up from a stack of forms that is, you suspect, mostly yours. \"$playerName. Have you brought me something that isn't a complaint?\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "give",
+          "text": "Hand over a piece of evidence",
+          "tooltip": "Lowers the Hegemony warrant by 100."
+        },
+        {
+          "id": "leave",
+          "text": "Not today",
+          "shortcut": "ESC"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": [],
+      "speaker": "toc_varro"
+    },
+    {
+      "id": "given",
+      "type": "action",
+      "x": 567,
+      "y": 18,
+      "title": "One piece",
+      "ops": [
+        {
+          "op": "item",
+          "item": "toc_evidence",
+          "qty": -1
+        },
+        {
+          "op": "progress",
+          "event": "toc_progress",
+          "points": -100,
+          "text": "You gave the tax office evidence"
+        }
+      ]
+    },
+    {
+      "id": "thanks",
+      "type": "dialog",
+      "x": 290,
+      "y": 12,
+      "title": "",
+      "visual": {
+        "kind": "keep"
+      },
+      "displays": [],
+      "text": "He reads every page, stamps three of them, and files the rest under a drawer labelled PROBABLY NOT YOU. \"That helps,\" he admits. \"A little. Keep them coming.\"",
+      "highlights": [],
+      "options": [
+        {
+          "id": "more",
+          "text": "Hand over another",
+          "showIf": [
+            "PlayerHasCargo toc_evidence 1"
+          ]
+        },
+        {
+          "id": "done",
+          "text": "Leave him to his forms"
+        }
+      ],
+      "conditions": [],
+      "script": [],
+      "phrases": []
+    },
+    {
+      "id": "menu",
+      "type": "link",
+      "x": 567,
+      "y": 218,
+      "mode": "menu",
+      "target": ""
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start_next",
+      "from": "start",
+      "handle": "next",
+      "to": "desk"
+    },
+    {
+      "id": "e_desk_give",
+      "from": "desk",
+      "handle": "give",
+      "to": "given"
+    },
+    {
+      "id": "e_desk_leave",
+      "from": "desk",
+      "handle": "leave",
+      "to": "menu"
+    },
+    {
+      "id": "e_given_next",
+      "from": "given",
+      "handle": "next",
+      "to": "thanks"
+    },
+    {
+      "id": "e_thanks_more",
+      "from": "thanks",
+      "handle": "more",
+      "to": "given"
+    },
+    {
+      "id": "e_thanks_done",
+      "from": "thanks",
+      "handle": "done",
+      "to": "menu"
+    }
+  ]
+}

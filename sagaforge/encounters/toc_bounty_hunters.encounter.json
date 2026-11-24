@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "outcomes": {},
+  "id": "toc_bounty_hunters",
+  "name": "Bounty Hunters",
+  "fleet": {
+    "faction": "mercenary",
+    "type": "patrolMedium",
+    "size": "template",
+    "template": "toc_bounty_hunters",
+    "quality": 0.5,
+    "randomPoints": 30,
+    "extras": [
+      {
+        "chance": 0.5,
+        "pick": 1,
+        "ships": [
+          {
+            "variant": "hammerhead_Balanced",
+            "weight": 2
+          },
+          {
+            "variant": "wolf_Assault"
+          }
+        ]
+      }
+    ]
+  },
+  "spawn": {
+    "at": "agreus",
+    "when": "quest-stage"
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": true,
+    "noRepImpact": true,
+    "important": true,
+    "allowDisengage": true
+  },
+  "notes": "Crisis bar stage \"Bounty hunters\": the named fleet, plus about 30 random fleet points and a 50% chance of a Hammerhead or a Wolf."
+}
