@@ -1,5 +1,7 @@
 # The Other Captain
 
+![John Starsector and Jane Starsector, Revenue Officer Anselm Varro and Phan from the Foundling Wheel](preview.png)
+
 A comedy questline for **Starsector 0.98a**: someone has been evading taxes under your name.
 
 Follow the paper trail of John Starsector (or Jane, if you play a woman), a walking disaster with
