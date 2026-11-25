@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "version": "0.1.1",
+  "date": "2026-11-25",
+  "quests": {
+    "toc_main": {
+      "stages": [
+        "summons",
+        "stopped",
+        "trail",
+        "wheel",
+        "gala_wait",
+        "gala",
+        "aftermath",
+        "search",
+        "hunt"
+      ],
+      "variables": [],
+      "renamed": {}
+    }
+  },
+  "flags": [
+    "$global.toc_a1_way",
+    "$global.toc_ending",
+    "$global.toc_fought_hegemony",
+    "$global.toc_john_free",
+    "$global.toc_main_agreus_arr_done",
+    "$global.toc_main_gala_arr_done",
+    "$global.toc_main_missionCompleted",
+    "$global.toc_main_office_done",
+    "$global.toc_main_records_done",
+    "$global.toc_main_state",
+    "$global.toc_main_step",
+    "$global.toc_main_wheel_arr_done",
+    "$global.toc_name_cleared",
+    "$global.toc_orphans_know",
+    "$global.toc_orphans_trust",
+    "$global.toc_orphans_with",
+    "$global.toc_progress_stage",
+    "$global.toc_told_truth",
+    "$global.toc_warrant_on",
+    "$global.toc_wheel_saved"
+  ],
+  "people": [
+    "toc_starsector",
+    "toc_orr",
+    "toc_phan",
+    "toc_varro",
+    "toc_brandt"
+  ],
+  "markets": [
+    "toc_foundling_wheel"
+  ],
+  "systems": {
+    "arcadia": {
+      "addToExistingSaves": true,
+      "entities": [
+        "toc_foundling_wheel"
+      ]
+    }
+  },
+  "factions": [],
+  "items": [
+    "toc_evidence"
+  ],
+  "encounters": [
+    "toc_back_taxes",
+    "toc_bounty_hunters",
+    "toc_hegemony_hunt",
+    "toc_john_fleet",
+    "toc_warrant_patrol"
+  ]
+}

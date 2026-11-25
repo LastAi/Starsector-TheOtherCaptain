@@ -8,7 +8,7 @@
     "kind": "trigger",
     "trigger": "OpenInteractionDialog",
     "conditions": [
-      "$market.factionId == hegemony score:1000"
+      "$faction.id == hegemony score:1000"
     ]
   },
   "requires": [],

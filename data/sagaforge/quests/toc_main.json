@@ -1,7 +1,7 @@
 {
   "_sagaforge": {
     "generated": "by Saga Forge; edits are overwritten on export",
-    "hash": "77497ef8"
+    "hash": "0cf16774"
   },
   "format": 1,
   "id": "toc_main",
@@ -14,7 +14,7 @@
     "kind": "trigger",
     "trigger": "OpenInteractionDialog",
     "conditions": [
-      "$market.factionId == hegemony score:1000"
+      "$faction.id == hegemony score:1000"
     ]
   },
   "requires": [],
