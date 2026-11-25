@@ -1,0 +1,43 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "d2f57666"
+  },
+  "format": 1,
+  "outcomes": {},
+  "id": "toc_john_fleet",
+  "name": "John's Getaway",
+  "fleet": {
+    "faction": "independent",
+    "type": "smuggler",
+    "size": "explicit",
+    "points": 0,
+    "variants": [
+      "hyperion_Strike",
+      "medusa_Attack",
+      "kite_original_Stock",
+      "kite_original_Stock"
+    ],
+    "shipNames": [
+      "Paperwork Pending",
+      "",
+      "",
+      ""
+    ],
+    "flagship": 0,
+    "template": "toc_john",
+    "flagshipCommander": "toc_starsector",
+    "name": "John's Getaway"
+  },
+  "spawn": {
+    "at": "agreus",
+    "when": "quest-stage",
+    "despawnOnStageEnd": true
+  },
+  "behavior": "guard",
+  "flags": {
+    "hostile": true,
+    "important": true,
+    "allowDisengage": true
+  }
+}

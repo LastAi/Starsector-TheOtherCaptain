@@ -1,0 +1,82 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "00cfc53d"
+  },
+  "format": 1,
+  "id": "toc_progress",
+  "name": "Hegemony Warrant",
+  "tag": "Story",
+  "max": 1000,
+  "negative": true,
+  "startConditions": [
+    "$global.toc_warrant_on"
+  ],
+  "restartAt": 700,
+  "stages": [
+    {
+      "id": "patrol",
+      "progress": 300,
+      "title": "Police patrols",
+      "text": "The Hegemony has issued a warrant in your name. Its police patrols are looking for you.",
+      "actions": [
+        {
+          "op": "spawn",
+          "encounter": "toc_warrant_patrol"
+        }
+      ]
+    },
+    {
+      "id": "hunters",
+      "progress": 600,
+      "title": "Bounty hunters",
+      "text": "The bounty on your name is high enough for mercenaries to come looking.",
+      "actions": [
+        {
+          "op": "spawn",
+          "encounter": "toc_bounty_hunters"
+        }
+      ]
+    },
+    {
+      "id": "hunted",
+      "progress": 1000,
+      "title": "Hunted",
+      "text": "The Hegemony has sent a task force after you. It will not stop until your name is cleared.",
+      "actions": [
+        {
+          "op": "spawn",
+          "encounter": "toc_hegemony_hunt"
+        }
+      ]
+    }
+  ],
+  "factors": [
+    {
+      "id": "open",
+      "desc": "The warrant is open",
+      "points": 50,
+      "conditions": [
+        "!$global.toc_name_cleared"
+      ]
+    },
+    {
+      "id": "fought",
+      "desc": "You fought the Hegemony",
+      "points": 40,
+      "conditions": [
+        "$global.toc_fought_hegemony",
+        "!$global.toc_name_cleared"
+      ]
+    },
+    {
+      "id": "john",
+      "desc": "John Starsector is still out there, using your name",
+      "points": 30,
+      "conditions": [
+        "$global.toc_john_free",
+        "!$global.toc_name_cleared"
+      ]
+    }
+  ]
+}

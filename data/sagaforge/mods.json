@@ -1,0 +1,17 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "5deba86a"
+  },
+  "format": 1,
+  "mod": "the_other_captain",
+  "name": "The Other Captain",
+  "prefix": "toc_",
+  "mods": [
+    {
+      "id": "generic_image_mod",
+      "name": "Generic Image Mod",
+      "use": "required"
+    }
+  ]
+}

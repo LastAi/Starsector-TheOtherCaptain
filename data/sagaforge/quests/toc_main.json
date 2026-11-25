@@ -1,0 +1,397 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "77497ef8"
+  },
+  "format": 1,
+  "id": "toc_main",
+  "title": "The Other Captain",
+  "kind": "quest",
+  "icon": "graphics/icons/missions/security_codes.png",
+  "repeatable": false,
+  "timeLimitDays": 0,
+  "start": {
+    "kind": "trigger",
+    "trigger": "OpenInteractionDialog",
+    "conditions": [
+      "$market.factionId == hegemony score:1000"
+    ]
+  },
+  "requires": [],
+  "stages": [
+    {
+      "id": "summons",
+      "title": "Report to Arcadia Station",
+      "journal": "Hegemony customs flagged your identity: a revenue officer at Arcadia Station wants a word about \"outstanding obligations\".",
+      "nextStep": "Report to the revenue office at Arcadia Station",
+      "marker": "arcadia_station",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "stopped",
+      "title": "Back taxes",
+      "journal": "The revenue officer is out with his fleet. He will find you.",
+      "nextStep": "Deal with the tax collector",
+      "marker": "",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "trail",
+      "title": "The paper trail",
+      "journal": "Someone has been running up debts in your name. The Hegemony records office at Arcadia Station keeps the paper trail.",
+      "nextStep": "Visit the records office at Arcadia Station",
+      "marker": "arcadia_station",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "wheel",
+      "title": "The Foundling Wheel",
+      "journal": "Your \"donations\" go to the Foundling Wheel, an orphanage station at Nomios. Its charity gala is hosted by its generous patron: you. Allegedly.",
+      "nextStep": "Visit the Foundling Wheel",
+      "marker": "toc_foundling_wheel",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "gala_wait",
+      "title": "Before the gala",
+      "journal": "The Foundling Wheel's charity gala is in a week. $toc_starsector_name, wearing your name, will be there.",
+      "nextStep": "Wait for the gala",
+      "marker": "",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "gala",
+      "title": "The gala",
+      "journal": "The Foundling Wheel's charity gala is tonight. So is $toc_starsector_name.",
+      "nextStep": "Attend the gala at the Foundling Wheel",
+      "marker": "toc_foundling_wheel",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "aftermath",
+      "title": "After the gala",
+      "journal": "$toc_starsector_firstName got away, and the Foundling Wheel's reactor was failing behind you.",
+      "nextStep": "Wait for news",
+      "marker": "",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "search",
+      "title": "The search",
+      "journal": "$toc_starsector_firstName got away. The Hegemony is looking; so are you.",
+      "nextStep": "Wait for a lead on $toc_starsector_firstName",
+      "marker": "",
+      "kind": "normal",
+      "renamedFrom": []
+    },
+    {
+      "id": "hunt",
+      "title": "The reckoning",
+      "journal": "$toc_starsector_name is hiding at Agreus, in Arcadia.",
+      "nextStep": "Find $toc_starsector_firstName at Agreus",
+      "marker": "agreus",
+      "kind": "normal",
+      "renamedFrom": []
+    }
+  ],
+  "variables": [],
+  "targets": [],
+  "rewards": [
+    {
+      "id": "done",
+      "xp": 15000,
+      "storyPoints": 1
+    }
+  ],
+  "timers": [
+    {
+      "node": "stop_wait",
+      "trigger": "toc_main_stop_wait",
+      "days": 7,
+      "stage": "stopped"
+    },
+    {
+      "node": "gala_days",
+      "trigger": "toc_main_gala_days",
+      "days": 7,
+      "stage": "gala_wait"
+    },
+    {
+      "node": "lost_days",
+      "trigger": "toc_main_lost_days",
+      "days": 1,
+      "stage": "aftermath"
+    },
+    {
+      "node": "search_days",
+      "trigger": "toc_main_search_days",
+      "days": 20,
+      "stage": "search"
+    }
+  ],
+  "encounters": [
+    {
+      "node": "stop",
+      "encounter": "toc_back_taxes",
+      "defeated": "toc_main_stop_defeated",
+      "avoided": "toc_main_stop_avoided"
+    },
+    {
+      "node": "john_fleet",
+      "encounter": "toc_john_fleet",
+      "defeated": "toc_main_john_fleet_defeated",
+      "avoided": "toc_main_john_fleet_avoided"
+    }
+  ],
+  "arrivals": [
+    "arcadia_station",
+    "arcadia_station",
+    "toc_foundling_wheel",
+    "toc_foundling_wheel",
+    "agreus"
+  ],
+  "entityFlags": [
+    {
+      "entity": "arcadia_station",
+      "flag": "$sagaforge_toc_main_office",
+      "steps": [
+        "summons"
+      ],
+      "important": true
+    },
+    {
+      "entity": "arcadia_station",
+      "flag": "$sagaforge_toc_main_records",
+      "steps": [
+        "trail"
+      ],
+      "important": true
+    },
+    {
+      "entity": "toc_foundling_wheel",
+      "flag": "$sagaforge_toc_main_wheel_arr",
+      "steps": [
+        "wheel"
+      ],
+      "important": true
+    },
+    {
+      "entity": "toc_foundling_wheel",
+      "flag": "$sagaforge_toc_main_gala_arr",
+      "steps": [
+        "gala"
+      ],
+      "important": true
+    },
+    {
+      "entity": "agreus",
+      "flag": "$sagaforge_toc_main_agreus_arr",
+      "steps": [
+        "hunt"
+      ],
+      "important": true
+    }
+  ],
+  "phrases": [
+    {
+      "token": "$toc_main_a1_after_v1",
+      "owner": "node:toc_main/a1_after",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_a1_way == pay"
+          ],
+          "text": "Ten thousand credits lighter, you watch the Hegemony fleet form up and leave. Varro waves. You don't."
+        },
+        {
+          "when": [
+            "$global.toc_a1_way == bluff"
+          ],
+          "text": "Varro's fleet leaves with a polite apology and an even more polite reminder that the debt is still on file."
+        },
+        {
+          "when": [
+            "$global.toc_a1_way == fight"
+          ],
+          "text": "The Hegemony fleet limps away, and somewhere a revenue officer is filing a report with the word \"assault\" in it, several times."
+        }
+      ],
+      "otherwise": "You never let the tax collector catch you. By now, a report with your name on it is on its way to every Hegemony office in the sector."
+    },
+    {
+      "token": "$toc_main_gala_bar_v1",
+      "owner": "node:toc_main/gala_bar",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_orphans_trust == kind"
+          ],
+          "text": "$toc_orr_name and $toc_phan_name are working the bar as volunteer waiters, in bow ties three sizes too big. $toc_phan_name slides you a drink. \"On the house,\" she whispers. \"You paid for it. Allegedly.\""
+        },
+        {
+          "when": [
+            "$global.toc_orphans_trust == honest"
+          ],
+          "text": "$toc_phan_name squeezes past with a tray of glasses and hisses, \"Is the fake here?\" $toc_orr_name, behind her, is glaring at every jacket in the room."
+        },
+        {
+          "when": [
+            "$global.toc_orphans_trust == rude"
+          ],
+          "text": "$toc_orr_name and $toc_phan_name are serving drinks. They serve everybody near you, and somehow never you."
+        }
+      ],
+      "otherwise": "$toc_orr_name and $toc_phan_name are serving drinks in bow ties three sizes too big."
+    },
+    {
+      "token": "$toc_main_gala_v1",
+      "owner": "node:toc_main/gala",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_orphans_know"
+          ],
+          "text": "$toc_phan_name, at the front, is glaring at $toc_him with her arms crossed. $toc_orr_name is taking notes."
+        },
+        {
+          "when": [
+            "$global.toc_orphans_trust == rude"
+          ],
+          "text": "Near the stage, $toc_orr_name and $toc_phan_name are clapping for $toc_him. They don't look at you."
+        }
+      ],
+      "otherwise": "$toc_orr_name and $toc_phan_name wave at you from the front row, then at $toc_him, confused."
+    },
+    {
+      "token": "$toc_main_save_v1",
+      "owner": "node:toc_main/save",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_orphans_trust != rude"
+          ],
+          "text": "$toc_orr_name gets there before you, shouting the coolant pump routine he explained to you twice. You were listening. Between the three of you, the pumps come back one by one."
+        }
+      ],
+      "otherwise": "You find the reactor room on your third try. $toc_orr_name is already there, shouting the coolant routine at no one in particular. He doesn't like you, but he lets you hold the wrench."
+    },
+    {
+      "token": "$toc_main_confront_v1",
+      "owner": "node:toc_main/confront",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_orphans_with == player"
+          ],
+          "text": "$toc_He glances at $toc_orr_name and $toc_phan_name behind you. \"And you brought the kids. Low blow, Captain.\""
+        },
+        {
+          "when": [
+            "$global.toc_orphans_with == john"
+          ],
+          "text": "$toc_orr_name and $toc_phan_name sit at $toc_his table, eating $toc_his chips. They look at you like you're the one who blew up their home."
+        }
+      ],
+      "otherwise": ""
+    },
+    {
+      "token": "$toc_main_epilogue_v1",
+      "owner": "node:toc_main/epilogue",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_wheel_saved"
+          ],
+          "text": "The Foundling Wheel still turns over Nomios. Its new coolant pumps carry a small brass plaque with your name on it. Your real name, this time."
+        }
+      ],
+      "otherwise": "Where the Foundling Wheel used to turn, the Nomios traffic charts now show a hazard marker and a slowly spreading debris field. The orphans were rehoused on Nomios. The matron sends a card every year."
+    },
+    {
+      "token": "$toc_main_epilogue_v2",
+      "owner": "node:toc_main/epilogue",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_orphans_with == player"
+          ],
+          "text": "$toc_orr_name and $toc_phan_name travel with your fleet now. $toc_orr_name has rewired the coffee machine twice; $toc_phan_name keeps the books, and the books have never been so honest."
+        },
+        {
+          "when": [
+            "$global.toc_ending == handover"
+          ],
+          "text": "With $toc_starsector_firstName in a cell, $toc_orr_name and $toc_phan_name went back to Nomios. They write to $toc_him every week. They write to you too, less often, with spelling mistakes on purpose."
+        },
+        {
+          "when": [
+            "$global.toc_ending == force"
+          ],
+          "text": "With $toc_starsector_firstName in a cell, $toc_orr_name and $toc_phan_name went back to Nomios. They write to $toc_him every week. They write to you too, less often, with spelling mistakes on purpose."
+        }
+      ],
+      "otherwise": "$toc_orr_name and $toc_phan_name left with $toc_starsector_firstName. Postcards arrive from places that don't have post offices."
+    },
+    {
+      "token": "$toc_main_epilogue_v3",
+      "owner": "node:toc_main/epilogue",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_ending == handover"
+          ],
+          "text": "$toc_starsector_name is serving eleven years in a Hegemony penal colony, where $toc_he has already been elected to the prisoners' council under somebody else's name."
+        },
+        {
+          "when": [
+            "$global.toc_ending == force"
+          ],
+          "text": "$toc_starsector_name was pulled from the wreck of $toc_his flagship, alive and complaining. $toc_He is serving eleven years in a Hegemony penal colony and has opened a gift shop."
+        },
+        {
+          "when": [
+            "$global.toc_ending == orphans"
+          ],
+          "text": "$toc_starsector_name writes to the Foundling kids every week from a Hegemony cell. Real letters. The handwriting is $toc_his own."
+        },
+        {
+          "when": [
+            "$global.toc_ending == deal"
+          ],
+          "text": "$toc_starsector_firstName kept $toc_his word, more or less. $toc_He never uses your name again. $toc_He uses your first officer's."
+        }
+      ],
+      "otherwise": "$toc_starsector_name is still out there. Every few months a bill arrives for something you never bought, and a thank-you card for buying it."
+    },
+    {
+      "token": "$toc_main_epilogue_v4",
+      "owner": "node:toc_main/epilogue",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$global.toc_name_cleared"
+          ],
+          "text": "Your name is clean. The warrant is closed, and $toc_varro_name sent a fruit basket. It came with an invoice."
+        }
+      ],
+      "otherwise": "The warrant is still open. $toc_varro_name at Arcadia Station will take more evidence, one piece at a time, until your name is clean."
+    }
+  ],
+  "flags": []
+}

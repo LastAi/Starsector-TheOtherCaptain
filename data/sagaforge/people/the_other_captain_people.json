@@ -1,0 +1,317 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "edd9060a"
+  },
+  "format": 1,
+  "people": [
+    {
+      "id": "toc_starsector",
+      "name": {
+        "first": "John",
+        "last": "Starsector"
+      },
+      "gender": "MALE",
+      "faction": "independent",
+      "rank": "citizen",
+      "post": "entrepreneur",
+      "portrait": "graphics/portraits/toc_john.png",
+      "placement": {
+        "at": "none"
+      },
+      "tags": [],
+      "phrases": [
+        {
+          "token": "$toc_starsector_name",
+          "owner": "toc_starsector",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "John Starsector"
+        },
+        {
+          "token": "$toc_starsector_firstName",
+          "owner": "toc_starsector",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "John"
+        },
+        {
+          "token": "$toc_starsector_lastName",
+          "owner": "toc_starsector",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Starsector"
+        }
+      ],
+      "personality": "cautious",
+      "versions": [
+        {
+          "id": "setting:player_gender=FEMALE",
+          "settingsWith": [
+            "player_gender=FEMALE"
+          ],
+          "set": {
+            "name.first": "Jane",
+            "gender": "FEMALE",
+            "portrait": "graphics/portraits/toc_jane.png",
+            "phrases[$toc_starsector_name].otherwise": "Jane Starsector",
+            "phrases[$toc_starsector_firstName].otherwise": "Jane"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toc_orr",
+      "name": {
+        "first": "",
+        "last": "Orr"
+      },
+      "gender": "MALE",
+      "faction": "independent",
+      "rank": "citizen",
+      "post": "",
+      "portrait": "graphics/portraits/toc_orr.png",
+      "placement": {
+        "at": "market",
+        "market": "toc_foundling_wheel",
+        "inCommDirectory": false
+      },
+      "tags": [],
+      "phrases": [
+        {
+          "token": "$toc_orr_name",
+          "owner": "toc_orr",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Orr"
+        },
+        {
+          "token": "$toc_orr_firstName",
+          "owner": "toc_orr",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Orr"
+        },
+        {
+          "token": "$toc_orr_lastName",
+          "owner": "toc_orr",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Orr"
+        }
+      ],
+      "personality": "reckless",
+      "oneName": true
+    },
+    {
+      "id": "toc_phan",
+      "name": {
+        "first": "",
+        "last": "Phan"
+      },
+      "gender": "FEMALE",
+      "faction": "independent",
+      "rank": "citizen",
+      "post": "",
+      "portrait": "graphics/portraits/toc_phan.png",
+      "placement": {
+        "at": "market",
+        "market": "toc_foundling_wheel",
+        "inCommDirectory": false
+      },
+      "tags": [],
+      "phrases": [
+        {
+          "token": "$toc_phan_name",
+          "owner": "toc_phan",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Phan"
+        },
+        {
+          "token": "$toc_phan_firstName",
+          "owner": "toc_phan",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Phan"
+        },
+        {
+          "token": "$toc_phan_lastName",
+          "owner": "toc_phan",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Phan"
+        }
+      ],
+      "personality": "steady",
+      "oneName": true
+    },
+    {
+      "id": "toc_varro",
+      "name": {
+        "first": "Anselm",
+        "last": "Varro"
+      },
+      "gender": "MALE",
+      "faction": "hegemony",
+      "rank": "spaceCommander",
+      "post": "investigator",
+      "portrait": "graphics/portraits/toc_tax_collector.png",
+      "placement": {
+        "at": "market",
+        "market": "arcadia_station",
+        "inCommDirectory": true
+      },
+      "tags": [],
+      "phrases": [
+        {
+          "token": "$toc_varro_name",
+          "owner": "toc_varro",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Anselm Varro"
+        },
+        {
+          "token": "$toc_varro_firstName",
+          "owner": "toc_varro",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Anselm"
+        },
+        {
+          "token": "$toc_varro_lastName",
+          "owner": "toc_varro",
+          "mode": "first-match",
+          "cases": [],
+          "otherwise": "Varro"
+        }
+      ],
+      "personality": "cautious"
+    },
+    {
+      "id": "toc_brandt",
+      "name": {
+        "first": "Cassia",
+        "last": "Brandt"
+      },
+      "gender": "FEMALE",
+      "faction": "hegemony",
+      "rank": "spaceLieutenant",
+      "post": "securityChief",
+      "portrait": "graphics/portraits/toc_officer_hard_ass.png",
+      "placement": {
+        "at": "none"
+      },
+      "tags": [],
+      "phrases": [],
+      "personality": "aggressive"
+    }
+  ],
+  "phrases": [
+    {
+      "token": "$toc_he",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "she"
+        }
+      ],
+      "otherwise": "he",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_He",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "She"
+        }
+      ],
+      "otherwise": "He",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_him",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "her"
+        }
+      ],
+      "otherwise": "him",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_his",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "her"
+        }
+      ],
+      "otherwise": "his",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_His",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "Her"
+        }
+      ],
+      "otherwise": "His",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_himself",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "herself"
+        }
+      ],
+      "otherwise": "himself",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    },
+    {
+      "token": "$toc_man",
+      "owner": "mod",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [
+            "$player.gender == FEMALE"
+          ],
+          "text": "woman"
+        }
+      ],
+      "otherwise": "man",
+      "notes": "John or Jane Starsector (the impostor matches the player's gender)"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "ed12eab0"
+  },
+  "format": 1,
+  "rules": {
+    "toc_back_taxes_comm_offer": {
+      "t": "\"Stand down, are you $playerName?\""
+    },
+    "toc_back_taxes_comm_dialog": {
+      "t": "The man introduces himself. \"I am $toc_varro_name.\"\nHe clears his throat.\n\"You, $playerSirOrMadam, have been very hard to track down.\"\nYou can hear typing. \"I'm sending the documents now.\"",
+      "o_toc_back_taxes_comm_pay_the_taxes": "You receive incoming data."
+    },
+    "toc_back_taxes_comm_dialog2_o1": {
+      "o_toc_back_taxes_comm_ask_where_the": "Ask where the debt is coming from."
+    },
+    "toc_back_taxes_comm_dialog2_o2": {
+      "o_toc_back_taxes_comm_option2": "Pay the 10,000.",
+      "tip_toc_back_taxes_comm_option2": "You need 10,000 credits."
+    },
+    "toc_back_taxes_comm_dialog2_o3": {
+      "o_toc_back_taxes_comm_just_flee": "Just flee. (It will probably make you look guilty.)"
+    },
+    "toc_back_taxes_comm_dialog2_o4": {
+      "o_toc_back_taxes_comm_dialog2_refuse": "Refuse to pay a debt that isn't yours.",
+      "tip_toc_back_taxes_comm_dialog2_refuse": "They will not take no for an answer."
+    },
+    "toc_back_taxes_comm_dialog2": {
+      "t": "Various documents are shown with your name as the debtor.\nDebts, fees and taxes, all in your name.\n\n\"How would you like to pay? The total is 10,000.\" $toc_varro_name asks flatly.",
+      "h1": "10,000"
+    },
+    "toc_back_taxes_comm_dialog3": {
+      "t": "$toc_varro_name begins explaining each and every document and receipt. \"And that's all. I must say, you're quite hard to track down.\"",
+      "o_toc_back_taxes_comm_try_to_explain": "Try to explain that these charges are not yours.",
+      "o_toc_back_taxes_comm_option3": "Explain why these charges cannot be yours.",
+      "g_story_toc_back_taxes_comm_option3": "Explain why these charges cannot be yours."
+    },
+    "toc_back_taxes_comm_dialog4": {
+      "t": "$toc_varro_name thanks you and the fleet leaves.",
+      "o_toc_back_taxes_comm_you_are_pretty": "You are pretty sure someone is using your identity."
+    },
+    "toc_back_taxes_comm_dialog5": {
+      "t": "\"Regardless. You must pay these now, or I have to take you in.\"",
+      "o_toc_back_taxes_comm_pay_the_10": "Pay the 10,000.",
+      "o_toc_back_taxes_comm_just_flee_probably": "Just flee. (It will probably make you look guilty.)",
+      "o_toc_back_taxes_comm_dialog5_refuse": "Refuse to pay a debt that isn't yours.",
+      "tip_toc_back_taxes_comm_pay_the_10": "You need 10,000 credits.",
+      "tip_toc_back_taxes_comm_dialog5_refuse": "They will not take no for an answer."
+    },
+    "toc_back_taxes_comm_dialog6": {
+      "t": "$toc_varro_name thanks you and the fleet leaves. He wishes you the best of luck.",
+      "o_toc_back_taxes_comm_you_are_sure": "You are sure someone is using your identity."
+    },
+    "toc_back_taxes_comm_refuse_say": {
+      "t": "$toc_varro_name sighs, the sigh of a man who will be filling in forms tonight. \"Then I am authorised to collect by other means.\" Behind him, someone is reading the weapons checklist out loud."
+    },
+    "toc_back_taxes_comm_again": {
+      "t": "\"$playerName. Running makes you look guilty, you know. And it adds a late fee.\" $toc_varro_name doesn't even look up. \"The total is still 10,000. Shall we try again?\"",
+      "o_toc_back_taxes_comm_again_pay": "Pay the 10,000.",
+      "o_toc_back_taxes_comm_again_refuse": "Refuse to pay a debt that isn't yours.",
+      "o_toc_back_taxes_comm_again_flee": "Run again.",
+      "h1": "10,000",
+      "tip_toc_back_taxes_comm_again_pay": "You need 10,000 credits."
+    },
+    "toc_evidence_turnin_start": {
+      "o_toc_evidence_turnin_start": "Take your evidence to the revenue office"
+    },
+    "toc_evidence_turnin_desk": {
+      "t": "$toc_varro_name looks up from a stack of forms that is, you suspect, mostly yours. \"$playerName. Have you brought me something that isn't a complaint?\"",
+      "o_toc_evidence_turnin_give": "Hand over a piece of evidence",
+      "o_toc_evidence_turnin_leave": "Not today",
+      "tip_toc_evidence_turnin_give": "Lowers the Hegemony warrant by 100."
+    },
+    "toc_evidence_turnin_thanks_o1": {
+      "o_toc_evidence_turnin_more": "Hand over another"
+    },
+    "toc_evidence_turnin_thanks_o2": {
+      "o_toc_evidence_turnin_done": "Leave him to his forms"
+    },
+    "toc_evidence_turnin_thanks": {
+      "t": "He reads every page, stamps three of them, and files the rest under a drawer labelled PROBABLY NOT YOU. \"That helps,\" he admits. \"A little. Keep them coming.\""
+    },
+    "toc_main_notice": {
+      "t": "The docking clamps engage, then disengage, then engage again, as if the station can't decide whether to let you in.\n\nA customs officer appears on your comm, reading from a screen. \"$playerName? Your identity is flagged for outstanding obligations to the Hegemony Revenue Service. Fees, fines, a tax or two.\" He squints. \"Several taxes. Please report to the revenue office at Arcadia Station at your earliest convenience.\"\n\n\"Or at our convenience,\" he adds. \"Which comes sooner.\"",
+      "o_toc_main_n_ok": "Say there must be a mistake",
+      "o_toc_main_n_go": "Promise to report to Arcadia Station",
+      "h1": "Arcadia Station"
+    },
+    "toc_main_n_mistake": {
+      "t": "\"Everybody says that.\" He doesn't look up. \"Arcadia Station. Revenue office. Have a pleasant day, $playerSirOrMadam.\"",
+      "o_toc_main_n_go2": "Sigh, and plot a course to Arcadia"
+    },
+    "toc_main_office_offer": {
+      "o_toc_main_office_go": "Report to the revenue office"
+    },
+    "toc_main_office": {
+      "t": "Arcadia Station's revenue office keeps a light on for you. Literally: your name is blinking on the board above the counter."
+    },
+    "toc_main_office_say": {
+      "t": "The clerk checks the board, then you, then the board again. \"Revenue Officer $toc_varro_name handles your file personally. He's out with his fleet.\" She taps a key. \"I've let him know you're here. He'll meet you when you undock.\"\n\n\"Most people try to leave,\" she adds kindly. \"It never helps.\"",
+      "o_toc_main_o_ok": "Undock and get it over with"
+    },
+    "toc_main_a1_after": {
+      "t": "$toc_main_a1_after_v1\n\nYou spend the next hour going through the documents Varro sent. The signatures are yours. The handwriting isn't. The ship registrations are yours, except for the ships, which you have never owned. Someone has been living your life, and doing it badly.",
+      "o_toc_main_a1_ok": "Find out who is using your name"
+    },
+    "toc_main_records_offer": {
+      "o_toc_main_records_go": "Visit the Hegemony records office"
+    },
+    "toc_main_records": {
+      "t": "The records office at Arcadia Station is three floors of filing cabinets and one very tired archivist."
+    },
+    "toc_main_records_say_o1": {
+      "o_toc_main_r_who": "Ask who that is in the picture"
+    },
+    "toc_main_records_say_o2": {
+      "o_toc_main_r_copy": "Take copies of everything"
+    },
+    "toc_main_records_say": {
+      "t": "The archivist pulls your file. It is thick. It is much thicker than your life.\n\nCredit lines, ship leases, a gambling debt on Chicomoztoc, and a standing monthly donation to the Foundling Wheel Charity Fund, an orphanage station at Nomios. Every withdrawal from that fund is signed by its generous patron: \"Capt. $playerName\".\n\nPinned to the back of the file, a flyer: the Foundling Wheel's charity gala, hosted by the same generous patron. There is a picture. It is not you.",
+      "h1": "Foundling Wheel",
+      "h2": "charity gala"
+    },
+    "toc_main_records_who": {
+      "t": "The archivist runs the face. The match comes back in under a second, which, she says, is a record. \"$toc_starsector_name. Identity theft, tax evasion, three counts of accidental arson, one of deliberate arson, and...\" she scrolls, \"...stealing from orphans. Wanted in four systems. $toc_He owes more than you do, and you owe a lot.\"\n\n\"Well. $toc_He owes it as you.\"",
+      "o_toc_main_r_copy2": "Take copies of everything",
+      "h1": "$toc_starsector_name"
+    },
+    "toc_main_wheel_arr_offer": {
+      "o_toc_main_wheel_arr_go": "Visit the orphanage"
+    },
+    "toc_main_wheel_arr": {
+      "t": "The Foundling Wheel turns slowly over Nomios, patched in six colours. A banner across the docking ring reads WELCOME TO OUR PATRON, with your name spelled correctly. Small mercies."
+    },
+    "toc_main_meet": {
+      "t": "Two children are waiting at the airlock with a hand-painted sign. The taller one, $toc_orr_name, holds it upside down. The smaller one, $toc_phan_name, corrects it, then looks you up and down.\n\n\"You're shorter than on the poster,\" says $toc_phan_name.\n\"And you came early,\" says $toc_orr_name. \"The gala's not for a week. Are you checking on the fund? Matron says you check on the fund a lot.\"",
+      "o_toc_main_m_play": "Play along, and ask them to show you around",
+      "o_toc_main_m_truth": "Tell them you are not who they think you are",
+      "o_toc_main_m_adult": "Ask them to fetch an adult",
+      "h1": "a week"
+    },
+    "toc_main_tour": {
+      "t": "They show you everything: the hydroponics bay, the classroom, the reactor room they are absolutely not allowed in. $toc_orr_name explains how the coolant pumps work, in detail, twice. By the end of it they are holding your hands.\n\n\"See you at the gala, Captain,\" says $toc_phan_name. \"Bring the real cake this time.\"",
+      "o_toc_main_t_ok": "Promise to come to the gala"
+    },
+    "toc_main_honest_say": {
+      "t": "They listen to the whole story. $toc_orr_name looks crushed. $toc_phan_name looks thoughtful, then disappears and comes back with a crumpled receipt.\n\n\"The patron dropped this last time. I kept it because the signature looked wrong. You do your Ps differently.\" She hands it over. \"If that's not you, who is it?\"",
+      "o_toc_main_h_ok": "Take the receipt, and promise to find out at the gala"
+    },
+    "toc_main_rude_say": {
+      "t": "$toc_orr_name and $toc_phan_name exchange a look, the look children give adults who have just failed a test. They fetch the matron, who is polite, busy and no help at all.\n\nOn your way out you hear $toc_phan_name: \"Told you the poster was nicer.\"",
+      "o_toc_main_ru_ok": "Leave, and come back for the gala"
+    },
+    "toc_main_gala_say0": {
+      "t": "An invitation pings your comm, addressed to you, signed by you: the Foundling Wheel's charity gala starts tonight.",
+      "o_toc_main_g0_ok": "Plot a course to Nomios"
+    },
+    "toc_main_gala_arr_offer": {
+      "o_toc_main_gala_arr_go": "Attend the charity gala"
+    },
+    "toc_main_gala_arr": {
+      "t": "The Foundling Wheel is lit up like a festival. Shuttles from three systems crowd the docking ring."
+    },
+    "toc_main_gala_bar_o1": {
+      "o_toc_main_gb_guest": "Chat with the guest who keeps toasting you"
+    },
+    "toc_main_gala_bar_o2": {
+      "o_toc_main_gb_hall": "Go into the hall for the patron's speech"
+    },
+    "toc_main_gala_bar_again": {
+      "t": "The bar is still toasting your name. Through the doors, the hall is filling up for the speech."
+    },
+    "toc_main_gala_bar": {
+      "t": "The gala starts at the bar, the way the best ones do. Somebody has hung bunting from the coolant pipes. Every few minutes a guest raises a glass \"to Captain $playerName, the most generous captain in the sector!\" and the bar cheers. Nobody looks at you. Nobody knows your face. They know your name very well.\n\n$toc_main_gala_bar_v1"
+    },
+    "toc_main_gala_guest": {
+      "t": "The guest is a cheerful freight broker who has given the Foundling Wheel a great deal of money. \"Such a hands-on patron,\" she beams. \"Do you know, the Captain inspected the reactor room personally this afternoon? Alone, for an hour. Very thorough. Such dedication.\"\n\nYou find that you have put your drink down.",
+      "o_toc_main_gg_ok": "Excuse yourself",
+      "h1": "inspected the reactor room personally"
+    },
+    "toc_main_gala": {
+      "t": "The hall is under the Wheel's old observation dome, packed to the walls. On a stage made of shipping crates, a $toc_man in a very good jacket is giving a speech. \"...and that is why I, Captain $playerName, have always believed in giving back.\" $toc_He has your name, and none of your manners. $toc_He is, you have to admit, a good speaker.\n\n$toc_main_gala_v1\n\nThen $toc_he presses something in $toc_his pocket. The lights die. Security doors slam open all over the station, and a klaxon starts: REACTOR COOLANT FAILURE. In the red light you see $toc_starsector_name running for the hangar with the fund's credit chip in $toc_his teeth.",
+      "o_toc_main_g_save": "Save the Wheel - get to the reactor room",
+      "o_toc_main_g_chase": "Chase $toc_starsector_firstName down - your name is not leaving with $toc_him",
+      "h1": "REACTOR COOLANT FAILURE"
+    },
+    "toc_main_save": {
+      "t": "$toc_main_save_v1\n\nThe klaxon stops. The lights come back. Somewhere far away, a shuttle you will never catch jumps out of the system.\n\nOn the reactor room floor, where $toc_starsector_firstName must have planted $toc_his device, lies the Wheel's real fund ledger. Every credit $toc_he took, in $toc_his own handwriting.",
+      "o_toc_main_s_ok": "Take the ledger"
+    },
+    "toc_main_saved_say": {
+      "t": "In the morning, $toc_orr_name and $toc_phan_name are waiting at your airlock with their bags packed. \"Matron says we can go with you,\" says $toc_phan_name, \"if you promise to bring us back for school.\" $toc_orr_name is already asking your engineer about your coolant pumps.",
+      "o_toc_main_sv_ok": "Welcome them aboard"
+    },
+    "toc_main_chase": {
+      "t": "You reach the hangar as $toc_starsector_firstName's shuttle clears the doors. $toc_He salutes you through the canopy. With your hand, somehow.\n\nIn the bay where it stood: a dropped datapad, still logged in. Fuel receipts, a docking reservation at Agreus, and a note: \"Remember: be YOU.\"\n\nBehind you, the Wheel shudders.",
+      "o_toc_main_c_ok": "Grab the datapad and run for your ship",
+      "h1": "Agreus"
+    },
+    "toc_main_lost_say": {
+      "t": "The news reaches you a day later. The Foundling Wheel's reactor went critical an hour after you left. Everyone was evacuated; nobody was hurt, which, given $toc_starsector_firstName, counts as a miracle.\n\nThe last shuttle out carried $toc_orr_name and $toc_phan_name, and their famous patron, Captain $playerName, who had come back for them. $toc_starsector_firstName came back for them. They went with $toc_him.",
+      "o_toc_main_l_ok": "Follow the datapad to Agreus",
+      "h1": "They went with"
+    },
+    "toc_main_search_found": {
+      "t": "A message from Arcadia Station, from $toc_varro_name: \"Someone using your name, has rented a berth at Agreus. Please don't make me file anything else.\" There is a smiley at the end. It looks like it was added under protest.",
+      "o_toc_main_sf_ok": "Head for Agreus"
+    },
+    "toc_main_agreus_arr_offer": {
+      "o_toc_main_agreus_arr_go": "Find $toc_starsector_name"
+    },
+    "toc_main_agreus_arr": {
+      "t": "Agreus's docks smell of fuel and bad decisions. Somewhere down here is somebody with your name."
+    },
+    "toc_main_confront_o1": {
+      "o_toc_main_c_truth": "Tell Orr and Phan who really destroyed the Wheel"
+    },
+    "toc_main_confront_o2": {
+      "o_toc_main_c_hand": "Hand $toc_him over to the Hegemony, with the evidence",
+      "tip_toc_main_c_hand": "Uses one piece of evidence. Clears your name."
+    },
+    "toc_main_confront_o3": {
+      "o_toc_main_c_deal": "Hear $toc_his deal"
+    },
+    "toc_main_confront_o4": {
+      "o_toc_main_c_let": "Let $toc_him go"
+    },
+    "toc_main_confront_o5": {
+      "o_toc_main_c_kids": "Let Orr and Phan decide"
+    },
+    "toc_main_confront_o6": {
+      "o_toc_main_c_force": "Grab $toc_him - $toc_his fleet can try to stop you"
+    },
+    "toc_main_confront": {
+      "t": "$toc_He is in the back of a dockside bar, under a poster of $toc_himself. Of you. $toc_He waves you over like an old friend.\n\n\"Captain! Sit, sit. I've been you for three years; it's nice to finally meet me.\" $toc_main_confront_v1\n\n\"Let's be adults about this. I took a name nobody was using properly. You can't prove much. And you don't want a scene.\""
+    },
+    "toc_main_truth_yes": {
+      "t": "You tell them about the device, the coolant, the credit chip in $toc_his teeth. $toc_orr_name looks at $toc_starsector_firstName. $toc_starsector_firstName looks at the ceiling. $toc_phan_name puts down the chips, slowly, and comes to stand next to you.\n\n\"$toc_He said the reactor was an accident,\" says $toc_orr_name. \"$toc_He says everything is an accident.\"",
+      "o_toc_main_ty_ok": "Turn back to $toc_starsector_firstName"
+    },
+    "toc_main_truth_no": {
+      "t": "You tell them everything. They listen politely, the way you once listened to them, and then $toc_phan_name says, \"The poster was nicer,\" and goes back to her chips.",
+      "o_toc_main_tn_ok": "Turn back to $toc_starsector_firstName"
+    },
+    "toc_main_deal": {
+      "t": "\"One hundred thousand credits,\" $toc_starsector_firstName says, \"and I retire your name. Never use it again. I'll be someone else entirely. I was thinking: Admiral.\" $toc_He slides a credit chip across the table. It is the Wheel's.",
+      "o_toc_main_d_take": "Take the deal",
+      "o_toc_main_d_back": "Push the chip back"
+    },
+    "toc_main_kids": {
+      "t": "$toc_orr_name and $toc_phan_name confer in whispers. It takes a while. $toc_starsector_firstName tries to join in and is shushed.\n\n\"$toc_He goes to the Hegemony,\" $toc_phan_name announces at last. \"But $toc_he has to write to us. Every week. Real letters.\"\n\"With the right handwriting,\" adds $toc_orr_name.",
+      "o_toc_main_k_ok": "Call the Hegemony"
+    },
+    "toc_main_force_say": {
+      "t": "$toc_starsector_firstName is out of $toc_his chair before you are, and out of the bar before your crew is. Twenty minutes later $toc_his little fleet is burning hard for the jump point. Your sensors officer asks, quietly, whether \"$toc_starsector_firstName's Getaway\" is a real fleet name.",
+      "o_toc_main_f_go": "Run $toc_him down"
+    },
+    "toc_main_poster_caught": {
+      "t": "Back on Arcadia Station, the bounty board updates itself with a cheerful chime.",
+      "o_toc_main_pc_ok": "Read on"
+    },
+    "toc_main_poster_free": {
+      "t": "Back on Arcadia Station, the bounty board still shows that face. Under your name.",
+      "o_toc_main_pf_ok": "Read on"
+    },
+    "toc_main_epilogue": {
+      "t": "$toc_main_epilogue_v1\n\n$toc_main_epilogue_v2\n\n$toc_main_epilogue_v3\n\n$toc_main_epilogue_v4",
+      "o_toc_main_e_ok": "Close the file"
+    },
+    "toc_back_taxes_hail": {
+      "t": "You're being hailed by the Hegemony fleet, their ships move in to positions to block you from leaving."
+    }
+  },
+  "items": {
+    "toc_evidence": {
+      "name": "Evidence",
+      "desc": "Records, receipts, and forged papers that show someone else has been using your name. The Hegemony tax collector will take them as proof of your innocence, one piece at a time."
+    }
+  },
+  "descriptions": {
+    "toc_foundling_wheel|CUSTOM": {
+      "text1": "The Sector's solution to its orphan problem: a charity station built from salvaged hull sections, its corridors painted bright colours to hide the patches."
+    }
+  }
+}

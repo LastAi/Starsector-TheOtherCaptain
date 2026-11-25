@@ -1,0 +1,13 @@
+id,type,path,mod
+toc_back_taxes_comm,quest,data/sagaforge/quests/toc_back_taxes_comm.json,the_other_captain
+toc_main,quest,data/sagaforge/quests/toc_main.json,the_other_captain
+the_other_captain_people,people,data/sagaforge/people/the_other_captain_people.json,the_other_captain
+arcadia,system,data/sagaforge/systems/arcadia.json,the_other_captain
+toc_back_taxes,encounter,data/sagaforge/encounters/toc_back_taxes.json,the_other_captain
+toc_bounty_hunters,encounter,data/sagaforge/encounters/toc_bounty_hunters.json,the_other_captain
+toc_hegemony_hunt,encounter,data/sagaforge/encounters/toc_hegemony_hunt.json,the_other_captain
+toc_john_fleet,encounter,data/sagaforge/encounters/toc_john_fleet.json,the_other_captain
+toc_warrant_patrol,encounter,data/sagaforge/encounters/toc_warrant_patrol.json,the_other_captain
+toc_progress,progress,data/sagaforge/progress/toc_progress.json,the_other_captain
+the_other_captain_text,strings,data/sagaforge/text.json,the_other_captain
+the_other_captain_mods,mods,data/sagaforge/mods.json,the_other_captain

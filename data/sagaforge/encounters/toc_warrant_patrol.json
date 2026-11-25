@@ -1,0 +1,58 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "9d827df0"
+  },
+  "format": 1,
+  "outcomes": {
+    "defeated": "SF_enc_toc_warrant_patrol_defeated",
+    "defeatedActions": [
+      {
+        "op": "set",
+        "key": "$global.toc_fought_hegemony",
+        "value": "true"
+      }
+    ]
+  },
+  "id": "toc_warrant_patrol",
+  "name": "Warrant Patrol",
+  "fleet": {
+    "faction": "hegemony",
+    "type": "patrolMedium",
+    "size": "explicit",
+    "points": 0,
+    "variants": [
+      "lasher_Standard",
+      "lasher_Standard",
+      "lasher_Standard",
+      "enforcer_Balanced",
+      "enforcer_XIV_Elite",
+      "enforcer_CS",
+      "dominator_Support"
+    ],
+    "shipNames": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "flagship": 4,
+    "template": "toc_officer_hard_ass",
+    "flagshipCommander": "toc_brandt",
+    "captainDiesOnDefeat": true,
+    "name": "Warrant Enforcer"
+  },
+  "spawn": {
+    "at": "arcadia_station",
+    "when": "quest-stage"
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": true,
+    "important": true,
+    "allowDisengage": true
+  }
+}

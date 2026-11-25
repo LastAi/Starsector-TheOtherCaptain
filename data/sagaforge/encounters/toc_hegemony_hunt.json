@@ -1,0 +1,37 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "cd07bb2b"
+  },
+  "format": 1,
+  "outcomes": {
+    "defeated": "SF_enc_toc_hegemony_hunt_defeated",
+    "defeatedActions": [
+      {
+        "op": "set",
+        "key": "$global.toc_fought_hegemony",
+        "value": "true"
+      }
+    ]
+  },
+  "id": "toc_hegemony_hunt",
+  "name": "Hegemony Manhunt",
+  "fleet": {
+    "faction": "hegemony",
+    "type": "patrolLarge",
+    "size": "fp",
+    "points": 150,
+    "quality": 0.6,
+    "name": "Warrant Task Force"
+  },
+  "spawn": {
+    "at": "chicomoztoc",
+    "when": "quest-stage"
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": true,
+    "important": true,
+    "allowDisengage": true
+  }
+}

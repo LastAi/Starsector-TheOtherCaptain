@@ -6,7 +6,9 @@
   },
   "ignores": [],
   "ownedQuestIds": [],
-  "exported": {},
+  "exported": {
+    "illustrations": "toc_fees,toc_jane_term,toc_jane_wan,toc_john_term,toc_john_wan,toc_tablet"
+  },
   "options": {},
   "savedWith": "1.2.0",
   "illustrations": {

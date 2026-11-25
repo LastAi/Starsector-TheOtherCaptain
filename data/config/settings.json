@@ -1,0 +1,12 @@
+{
+	"graphics": {
+		"illustrations": {
+			"toc_jane_term": "graphics/illustrations/toc_jane_term.png",
+			"toc_jane_wan": "graphics/illustrations/toc_jane_wan.png",
+			"toc_john_term": "graphics/illustrations/toc_john_term.png",
+			"toc_john_wan": "graphics/illustrations/toc_john_wan.png",
+			"toc_tablet": "graphics/illustrations/toc_tablet.png",
+			"toc_fees": "graphics/illustrations/toc_fees.png"
+		}
+	}
+}

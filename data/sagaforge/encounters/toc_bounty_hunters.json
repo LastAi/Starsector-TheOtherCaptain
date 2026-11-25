@@ -1,0 +1,60 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "e7a82d4c"
+  },
+  "format": 1,
+  "outcomes": {},
+  "id": "toc_bounty_hunters",
+  "name": "Bounty Hunters",
+  "fleet": {
+    "faction": "mercenary",
+    "type": "patrolMedium",
+    "size": "explicit",
+    "points": 0,
+    "variants": [
+      "lasher_Standard",
+      "lasher_Standard",
+      "tempest_Attack",
+      "brawler_Elite",
+      "lasher_Assault"
+    ],
+    "shipNames": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "flagship": 3,
+    "template": "toc_bounty_hunters",
+    "name": "Bounty Hunters",
+    "randomPoints": 30,
+    "extras": [
+      {
+        "chance": 0.5,
+        "pick": 1,
+        "ships": [
+          {
+            "variant": "hammerhead_Balanced",
+            "weight": 2
+          },
+          {
+            "variant": "wolf_Assault"
+          }
+        ]
+      }
+    ]
+  },
+  "spawn": {
+    "at": "agreus",
+    "when": "quest-stage"
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": true,
+    "noRepImpact": true,
+    "important": true,
+    "allowDisengage": true
+  }
+}

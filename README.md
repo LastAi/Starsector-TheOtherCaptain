@@ -7,9 +7,9 @@ good papers, from a Hegemony customs stop through the Foundling Wheel orphanage 
 to a reckoning, while a Hegemony warrant keeps growing. How you handle the tax collector, the kids at
 the Wheel and the gala decides how it ends.
 
-> **Work in progress.** The story is complete in the editor but hasn't been exported or played in
-> game yet, so this repo holds the **Saga Forge project**, not a playable mod: there is no `data/`
-> folder yet. A release zip comes once it has been played through in game.
+> **Work in progress, being playtested.** The story is complete and exported, so this folder is a
+> mod you can try: copy it into `Starsector/mods/` (it needs the two mods below). It hasn't been
+> played through in game yet, so expect rough edges. A release zip comes once it has.
 
 ## Needs
 

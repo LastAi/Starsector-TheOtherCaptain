@@ -1,0 +1,43 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "cc7fe00c"
+  },
+  "format": 1,
+  "id": "toc_back_taxes_comm",
+  "title": "Back Taxes: comm link",
+  "kind": "dialog",
+  "icon": "graphics/icons/missions/data_retrieval.png",
+  "repeatable": false,
+  "timeLimitDays": 0,
+  "start": {
+    "kind": "trigger",
+    "trigger": "OpenCommLink",
+    "conditions": [
+      "$entity.sagaforge_encounter == toc_back_taxes"
+    ]
+  },
+  "requires": [],
+  "stages": [],
+  "variables": [],
+  "targets": [],
+  "rewards": [],
+  "timers": [],
+  "encounters": [],
+  "arrivals": [],
+  "phrases": [
+    {
+      "token": "$toc_back_taxes_comm_offer_v1",
+      "owner": "node:toc_back_taxes_comm/offer",
+      "mode": "first-match",
+      "cases": [
+        {
+          "when": [],
+          "text": ""
+        }
+      ],
+      "otherwise": ""
+    }
+  ],
+  "flags": []
+}

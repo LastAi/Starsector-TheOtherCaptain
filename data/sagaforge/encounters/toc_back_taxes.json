@@ -1,0 +1,50 @@
+{
+  "_sagaforge": {
+    "generated": "by Saga Forge; edits are overwritten on export",
+    "hash": "302fcb29"
+  },
+  "format": 1,
+  "id": "toc_back_taxes",
+  "name": "Back Taxes",
+  "fleet": {
+    "faction": "hegemony",
+    "type": "investigators",
+    "size": "explicit",
+    "points": 0,
+    "variants": [
+      "centurion_Assault",
+      "centurion_Assault",
+      "hound_hegemony_Standard",
+      "enforcer_XIV_Elite",
+      "enforcer_XIV_Elite"
+    ],
+    "shipNames": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "flagship": 2,
+    "template": "toc_tax_collector",
+    "flagshipCommander": "toc_varro",
+    "name": "Tax Collector"
+  },
+  "spawn": {
+    "at": "arcadia_station",
+    "when": "quest-stage",
+    "despawnOnStageEnd": true
+  },
+  "behavior": "intercept-player",
+  "flags": {
+    "hostile": false,
+    "important": false,
+    "allowDisengage": false
+  },
+  "outcomes": {},
+  "hail": {
+    "describe": true,
+    "text": "You're being hailed by the Hegemony fleet, their ships move in to positions to block you from leaving."
+  },
+  "commDialog": "toc_back_taxes_comm"
+}
